@@ -262,6 +262,19 @@
       "speak": "点击开始说话",
       "end": "结束面试",
       "next": "下一个问题",
+      "loading": "加载中...",
+      "backToList": "返回列表",
+      "interviewRecord": "面试记录",
+      "viewResult": "查看结果",
+      "scrollToTop": "滚动到顶部",
+      "retry": "重试",
+      "endConfirm": {
+        "title": "确认结束面试",
+        "warningMessage": "当前面试只进行了 {count} 轮问答，建议完成 10 轮以获得更全面的评估。确定要提前结束吗？",
+        "normalMessage": "面试将结束并生成评估报告，确定要结束吗？",
+        "continue": "继续面试",
+        "confirm": "确认结束"
+      },
       "difficulty": {
         "easy": "简单",
         "medium": "中等",

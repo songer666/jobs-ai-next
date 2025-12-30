@@ -1,5 +1,6 @@
 "use client"
 
+import { useRef } from "react"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 import { config, getApiUrl } from "@/lib/config"
@@ -78,14 +79,14 @@ export function useInterviewUsage() {
             const response = await fetch(getApiUrl(config.api.interview.usage), {
                 credentials: "include",
             })
-            
+
             if (!response.ok) {
                 if (response.status === 401) {
                     throw new Error("未登录")
                 }
                 throw new Error("获取使用量失败")
             }
-            
+
             const data: UsageResponse = await response.json()
             return data.usage
         },
@@ -96,30 +97,55 @@ export function useInterviewUsage() {
 // ==================== 获取面试列表 ====================
 
 export function useInterviews() {
-    return useQuery({
+    const router = useRouter()
+    const prevStatusRef = useRef<Map<string, string>>(new Map())
+
+    const query = useQuery({
         queryKey: ["interviews"],
         queryFn: async () => {
             const response = await fetch(getApiUrl(config.api.interview.list), {
                 credentials: "include",
             })
-            
+
             if (!response.ok) {
                 if (response.status === 401) {
                     throw new Error("未登录")
                 }
                 throw new Error("获取面试列表失败")
             }
-            
+
             const data: InterviewListResponse = await response.json()
-            return data.interviews || []
+            const interviews = data.interviews || []
+
+            // 检测 evaluating -> completed 状态变化
+            interviews.forEach((interview: Interview) => {
+                const prevStatus = prevStatusRef.current.get(interview.id)
+                if (prevStatus === "evaluating" && interview.status === "completed") {
+                    router.refresh()
+                }
+                prevStatusRef.current.set(interview.id, interview.status || "")
+            })
+
+            return interviews
         },
         staleTime: 0,
+        // 当有面试处于 evaluating 状态时，每 5 秒自动刷新
+        refetchInterval: (query) => {
+            const interviews = query.state.data
+            if (!interviews) return false
+            const hasEvaluating = interviews.some((i: Interview) => i.status === "evaluating")
+            return hasEvaluating ? 5000 : false
+        },
     })
+
+    return query
 }
 
 // ==================== 获取单个面试 ====================
 
 export function useInterview(id: string | undefined) {
+    const queryClient = useQueryClient()
+
     return useQuery({
         queryKey: ["interview", id],
         queryFn: async () => {
@@ -127,7 +153,7 @@ export function useInterview(id: string | undefined) {
             const response = await fetch(getApiUrl(config.api.interview.detail(id)), {
                 credentials: "include",
             })
-            
+
             if (!response.ok) {
                 if (response.status === 401) {
                     throw new Error("未登录")
@@ -137,11 +163,21 @@ export function useInterview(id: string | undefined) {
                 }
                 throw new Error("获取面试详情失败")
             }
-            
+
             const data: InterviewResponse = await response.json()
             return data.interview
         },
         enabled: !!id,
+        staleTime: 0,
+        // 只在 evaluating 状态时轮询（等待评分完成）
+        refetchInterval: (query) => {
+            const interview = query.state.data
+            if (!interview) return false
+            if (interview.status === "evaluating") {
+                return 5000
+            }
+            return false
+        },
     })
 }
 
@@ -150,7 +186,7 @@ export function useInterview(id: string | undefined) {
 export function useCreateInterview() {
     const queryClient = useQueryClient()
     const router = useRouter()
-    
+
     return useMutation({
         mutationFn: async (data: CreateInterviewData) => {
             const response = await fetch(getApiUrl(config.api.interview.base), {
@@ -161,7 +197,7 @@ export function useCreateInterview() {
                 credentials: "include",
                 body: JSON.stringify(data),
             })
-            
+
             if (!response.ok) {
                 if (response.status === 401) {
                     throw new Error("未登录")
@@ -173,7 +209,7 @@ export function useCreateInterview() {
                 const errorData = await response.json()
                 throw new Error(errorData.message || "创建面试失败")
             }
-            
+
             const result: InterviewResponse = await response.json()
             return result.interview
         },
@@ -190,58 +226,18 @@ export function useCreateInterview() {
     })
 }
 
-// ==================== 更新面试 ====================
-
-export function useUpdateInterview() {
-    const queryClient = useQueryClient()
-    
-    return useMutation({
-        mutationFn: async ({ id, data }: { id: string; data: UpdateInterviewData }) => {
-            const response = await fetch(getApiUrl(config.api.interview.detail(id)), {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                credentials: "include",
-                body: JSON.stringify(data),
-            })
-            
-            if (!response.ok) {
-                if (response.status === 401) {
-                    throw new Error("未登录")
-                }
-                if (response.status === 403) {
-                    throw new Error("无权限修改此面试")
-                }
-                const errorData = await response.json()
-                throw new Error(errorData.message || "更新面试失败")
-            }
-            
-            const result: InterviewResponse = await response.json()
-            return result.interview
-        },
-        onSuccess: async (_, variables) => {
-            await queryClient.invalidateQueries({ queryKey: ["interviews"] })
-            await queryClient.invalidateQueries({ queryKey: ["interview", variables.id] })
-        },
-        onError: (error: Error) => {
-            toast.error(error.message || "更新失败，请重试")
-        },
-    })
-}
-
 // ==================== 删除面试 ====================
 
 export function useDeleteInterview() {
     const queryClient = useQueryClient()
-    
+
     return useMutation({
         mutationFn: async (id: string) => {
             const response = await fetch(getApiUrl(config.api.interview.detail(id)), {
                 method: "DELETE",
                 credentials: "include",
             })
-            
+
             if (!response.ok) {
                 if (response.status === 401) {
                     throw new Error("未登录")
@@ -302,7 +298,7 @@ export async function generateQuestion(
         const chunk = decoder.decode(value, { stream: true })
         onChunk(chunk)
     }
-    
+
     return { reachedLimit: false }
 }
 
@@ -350,26 +346,43 @@ export interface ConversationMessage {
     content: string
 }
 
-export async function completeInterview(
-    interviewId: string,
-    conversationHistory: ConversationMessage[],
-    duration: number
-): Promise<CompleteInterviewResult> {
-    const response = await fetch(getApiUrl(`${config.api.interview.base}/complete`), {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
+// React Query mutation 版本
+export function useCompleteInterview() {
+    const queryClient = useQueryClient()
+
+    return useMutation({
+        mutationFn: async ({ interviewId, conversationHistory, duration }: {
+            interviewId: string
+            conversationHistory: ConversationMessage[]
+            duration: number
+        }) => {
+            const response = await fetch(getApiUrl(`${config.api.interview.base}/complete`), {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+                body: JSON.stringify({ interviewId, conversationHistory, duration }),
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+                throw new Error(errorData.message || "完成面试失败")
+            }
+
+            return response.json() as Promise<CompleteInterviewResult>
         },
-        credentials: "include",
-        body: JSON.stringify({ interviewId, conversationHistory, duration }),
+        onSuccess: async (_, variables) => {
+            // 同时无效化面试列表和单个面试的缓存
+            await Promise.all([
+                queryClient.refetchQueries({ queryKey: ["interviews"] }),
+                queryClient.invalidateQueries({ queryKey: ["interview", variables.interviewId] }),
+            ])
+        },
+        onError: (error: Error) => {
+            toast.error(error.message || "完成面试失败")
+        },
     })
-
-    if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || "完成面试失败")
-    }
-
-    return response.json()
 }
 
 // ==================== 聊天消息 API ====================

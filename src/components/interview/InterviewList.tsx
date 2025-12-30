@@ -1,8 +1,10 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useState } from 'react';
-import { Plus, Loader2, Mic } from 'lucide-react';
+import { Plus, Loader2, Mic, RefreshCw } from 'lucide-react';
+import { useRouter } from '@/i18n/navigation';
+import { useQueryClient } from '@tanstack/react-query';
 import { useInterviews, useInterviewUsage, useDeleteInterview } from '@/api/interview';
 import { InterviewCard } from './InterviewCard';
 import { InterviewEmpty } from './InterviewEmpty';
@@ -27,11 +29,22 @@ const styles = {
 
 export function InterviewList() {
     const t = useTranslations('interview');
+    const locale = useLocale();
+    const router = useRouter();
+    const queryClient = useQueryClient();
     const { data: interviews, isLoading, error } = useInterviews();
     const { data: usage } = useInterviewUsage();
     const deleteMutation = useDeleteInterview();
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [deletingId, setDeletingId] = useState<string | null>(null);
+    const [isRefreshing, setIsRefreshing] = useState(false);
+
+    const handleRefresh = async () => {
+        setIsRefreshing(true);
+        await queryClient.invalidateQueries({ queryKey: ["interviews"] });
+        router.refresh();
+        setTimeout(() => setIsRefreshing(false), 500);
+    };
 
     const handleDelete = async (id: string) => {
         setDeletingId(id);
@@ -68,13 +81,21 @@ export function InterviewList() {
                 <div className={styles.controls}>
                     {usage && usage.limit > 0 && (
                         <div className={styles.usageWrapper}>
+                            <button
+                                onClick={handleRefresh}
+                                disabled={isRefreshing}
+                                className="p-1 hover:bg-white/10 rounded transition-colors disabled:opacity-50"
+                                title={locale === 'zh-CN' ? '刷新' : 'Refresh'}
+                            >
+                                <RefreshCw className={`w-4 h-4 text-primary cursor-pointer ${isRefreshing ? 'animate-spin' : ''}`} />
+                            </button>
                             <Mic className="w-4 h-4 text-primary" />
                             <span className={styles.usageText}>
-                                今日剩余: <span className={styles.usageCount}>{usage.remaining}/{usage.limit}</span>
+                                {locale === 'zh-CN' ? '今日剩余' : 'Remaining'}: <span className={styles.usageCount}>{usage.remaining}/{usage.limit}</span>
                             </span>
                         </div>
                     )}
-                    <button 
+                    <button
                         onClick={() => setIsDialogOpen(true)}
                         className={styles.createButton}
                         disabled={usage?.remaining === 0}
@@ -100,8 +121,8 @@ export function InterviewList() {
                 </div>
             )}
 
-            <StartInterviewDialog 
-                isOpen={isDialogOpen} 
+            <StartInterviewDialog
+                isOpen={isDialogOpen}
                 onOpenChange={setIsDialogOpen}
             />
         </div>

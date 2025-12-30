@@ -40,7 +40,7 @@ const styles = {
 export function GoalPositionDetail({ id }: GoalPositionDetailProps) {
     const t = useTranslations('goalPosition');
     const router = useRouter();
-    
+
     const { data: position, isLoading, error } = useGoalPosition(id);
     const deleteMutation = useDeleteGoalPosition();
     const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
@@ -78,7 +78,7 @@ export function GoalPositionDetail({ id }: GoalPositionDetailProps) {
         );
     }
 
-    const canEdit = position.isOwner !== false;
+    const canEdit = position.isOwner === true;
 
     return (
         <div className={styles.container}>
@@ -93,7 +93,7 @@ export function GoalPositionDetail({ id }: GoalPositionDetailProps) {
                             <Pencil className={styles.editIcon} />
                             {t('edit')}
                         </Link>
-                        <button 
+                        <button
                             type="button"
                             onClick={handleDeleteClick}
                             disabled={deleteMutation.isPending}

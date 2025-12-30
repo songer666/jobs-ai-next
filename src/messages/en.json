@@ -262,6 +262,19 @@
       "speak": "Click to start speaking",
       "end": "End Interview",
       "next": "Next Question",
+      "loading": "Loading...",
+      "backToList": "Back to List",
+      "interviewRecord": "Interview Record",
+      "viewResult": "View Result",
+      "scrollToTop": "Scroll to Top",
+      "retry": "Retry",
+      "endConfirm": {
+        "title": "Confirm End Interview",
+        "warningMessage": "Only {count} rounds completed. We recommend completing 10 rounds for a comprehensive evaluation. Are you sure you want to end early?",
+        "normalMessage": "The interview will end and an evaluation report will be generated. Are you sure?",
+        "continue": "Continue Interview",
+        "confirm": "Confirm End"
+      },
       "difficulty": {
         "easy": "Easy",
         "medium": "Medium",
