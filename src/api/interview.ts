@@ -90,7 +90,7 @@ export function useInterviewUsage() {
             const data: UsageResponse = await response.json()
             return data.usage
         },
-        staleTime: 30 * 1000, // 30秒
+        staleTime: 60 * 1000, // 60秒
     })
 }
 
@@ -129,12 +129,12 @@ export function useInterviews() {
             return interviews
         },
         staleTime: 0,
-        // 当有面试处于 evaluating 状态时，每 5 秒自动刷新
+        // 当有面试处于 evaluating 状态时，每 17 秒自动刷新
         refetchInterval: (query) => {
             const interviews = query.state.data
             if (!interviews) return false
             const hasEvaluating = interviews.some((i: Interview) => i.status === "evaluating")
-            return hasEvaluating ? 30000 : false
+            return hasEvaluating ? 17000 : false
         },
     })
 
@@ -144,7 +144,6 @@ export function useInterviews() {
 // ==================== 获取单个面试 ====================
 
 export function useInterview(id: string | undefined) {
-    const queryClient = useQueryClient()
 
     return useQuery({
         queryKey: ["interview", id],
@@ -174,7 +173,7 @@ export function useInterview(id: string | undefined) {
             const interview = query.state.data
             if (!interview) return false
             if (interview.status === "evaluating") {
-                return 30000
+                return 20000
             }
             return false
         },

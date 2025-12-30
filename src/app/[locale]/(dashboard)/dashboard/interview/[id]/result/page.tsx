@@ -3,6 +3,7 @@
 import { use, useEffect } from 'react';
 import { useRouter } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { useQueryClient } from '@tanstack/react-query';
 import { ChevronLeft, Clock, Star, Loader2 } from 'lucide-react';
 import { useInterview } from '@/api/interview';
 import ReactMarkdown from 'react-markdown';
@@ -34,6 +35,7 @@ export default function InterviewResultPage({ params }: ResultPageProps) {
     const { id: interviewId } = use(params);
     const router = useRouter();
     const t = useTranslations('interview');
+    const queryClient = useQueryClient();
     const { data: interview, isLoading, error } = useInterview(interviewId);
 
     const formatTime = (seconds: number) => {
@@ -41,6 +43,11 @@ export default function InterviewResultPage({ params }: ResultPageProps) {
         const secs = seconds % 60;
         return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
     };
+
+    // 页面进入时强制重新获取数据，避免使用缓存的旧数据
+    useEffect(() => {
+        queryClient.invalidateQueries({ queryKey: ["interview", interviewId] });
+    }, [interviewId, queryClient]);
 
     // 使用 useEffect 处理重定向，避免在渲染期间调用 router.push
     useEffect(() => {
@@ -90,7 +97,7 @@ export default function InterviewResultPage({ params }: ResultPageProps) {
                     <h1 className="text-lg font-semibold text-white">AI 评分中</h1>
                     <div className="w-20" />
                 </div>
-                
+
                 <main className={styles.main}>
                     <div className="flex flex-col items-center justify-center py-16 text-center">
                         <Loader2 className="w-12 h-12 text-primary animate-spin mb-6" />
@@ -98,7 +105,7 @@ export default function InterviewResultPage({ params }: ResultPageProps) {
                         <p className="text-white/60 max-w-md">
                             AI 正在分析您的面试表现，这可能需要 1-2 分钟。您可以返回列表页面，评分完成后会自动更新。
                         </p>
-                        <button 
+                        <button
                             onClick={() => router.push('/dashboard/interview')}
                             className="mt-8 px-6 py-3 bg-gradient-to-r from-[#f5a867] to-[#fd409a] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
                         >
@@ -131,14 +138,14 @@ export default function InterviewResultPage({ params }: ResultPageProps) {
                     返回列表
                 </button>
                 <h1 className="text-lg font-semibold text-white">{t('result.title')}</h1>
-                <button 
+                <button
                     onClick={() => router.push(`/dashboard/interview/${interviewId}`)}
                     className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-white/70 hover:text-white text-sm font-medium transition-colors"
                 >
                     面试记录
                 </button>
             </div>
-            
+
             <main className={styles.main}>
                 <div className={styles.resultContainer}>
                     {/* 分数 */}
@@ -174,7 +181,7 @@ export default function InterviewResultPage({ params }: ResultPageProps) {
 
                     {/* 操作按钮 */}
                     <div className={styles.actions}>
-                        <button 
+                        <button
                             onClick={() => router.push('/dashboard/interview')}
                             className={`${styles.actionButton} ${styles.secondaryAction}`}
                         >
