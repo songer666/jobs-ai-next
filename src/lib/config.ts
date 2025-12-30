@@ -2,30 +2,30 @@
 
 export const config = {
     // 后端 API 地址
-    apiUrl: process.env.NEXT_PUBLIC_API_URL || "http://localhost:8787",
-    
+    apiUrl: process.env.NEXT_PUBLIC_API_URL,
+
     // 前端应用地址
-    appUrl: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
-    
+    appUrl: process.env.NEXT_PUBLIC_APP_URL,
+
     // Auth 相关路径
     auth: {
         basePath: "/api/auth",
         checkUserPath: "/api/auth/check-user",
     },
-    
+
     // API 路径
     api: {
         // 用户相关
         profile: "/api/user/profile",
         dashboard: "/api/user/dashboard",
-        
+
         // 职位信息
         jobInfo: {
             base: "/api/user/job-info",
             list: "/api/user/job-info",
             detail: (id: string) => `/api/user/job-info/${id}`,
         },
-        
+
         // 面试相关
         interview: {
             base: "/api/user/interview",
@@ -42,7 +42,7 @@ export const config = {
                 submitAnswer: "/api/user/interview/submit-answer",
             },
         },
-        
+
         // 题库相关
         question: {
             base: "/api/user/question",
@@ -52,7 +52,7 @@ export const config = {
             generate: "/api/user/question/generate",
             submit: (id: string) => `/api/user/question/${id}/answer`,
         },
-        
+
         // 简历生成
         resumeGenerator: {
             base: "/api/user/resume-generator",
@@ -66,7 +66,7 @@ export const config = {
             },
             generate: "/api/user/resume-generator/generate",
         },
-        
+
         // 简历分析
         resumeAnalyzer: {
             base: "/api/user/resume-analyzer",
@@ -75,7 +75,7 @@ export const config = {
             usage: "/api/user/resume-analyzer/usage",
             analyze: "/api/user/resume-analyzer/analyze",
         },
-        
+
         // 简历（旧版，保留兼容）
         resume: {
             base: "/api/user/resume",
@@ -90,27 +90,20 @@ export const config = {
             generate: "/api/user/resume/generate",
             analyze: (id: string) => `/api/user/resume/${id}/analyze`,
         },
-        
+
         // 联系消息
         contact: {
             base: "/api/user/contact",
             send: "/api/user/contact",
         },
-        
+
         // 认证相关
         auth: {
             checkUser: "/api/auth/check-user",
             sendOTP: "/api/auth/send-otp",
         },
-        
-        // 游客面试
-        guestInterview: {
-            generate: "/api/guest-interview/generate",
-            evaluate: "/api/guest-interview/evaluate",
-            checkLimit: "/api/guest-interview/check-limit",
-        },
     },
-    
+
     // 回调 URL
     callbacks: {
         dashboard: "/dashboard",
@@ -120,8 +113,10 @@ export const config = {
 } as const;
 
 // 获取完整的 API URL
+// 通过 Next.js rewrites 代理，始终使用相对路径
 export function getApiUrl(path: string = ""): string {
-    return `${config.apiUrl}${path}`;
+    // 始终使用相对路径，让 Next.js rewrites 处理代理
+    return path;
 }
 
 // 获取 OAuth 回调 URL
