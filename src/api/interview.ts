@@ -134,7 +134,7 @@ export function useInterviews() {
             const interviews = query.state.data
             if (!interviews) return false
             const hasEvaluating = interviews.some((i: Interview) => i.status === "evaluating")
-            return hasEvaluating ? 5000 : false
+            return hasEvaluating ? 30000 : false
         },
     })
 
@@ -174,7 +174,7 @@ export function useInterview(id: string | undefined) {
             const interview = query.state.data
             if (!interview) return false
             if (interview.status === "evaluating") {
-                return 5000
+                return 30000
             }
             return false
         },
