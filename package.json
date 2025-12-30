@@ -1,0 +1,52 @@
+{
+  "name": "jobs-ai-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome check",
+    "format": "biome format --write"
+  },
+  "dependencies": {
+    "@ai-sdk/react": "^3.0.3",
+    "@heroui/react": "3.0.0-beta.3",
+    "@heroui/styles": "3.0.0-beta.3",
+    "@humeai/voice-react": "^0.2.11",
+    "@tanstack/react-form": "^1.27.6",
+    "@tanstack/react-query": "^5.90.12",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "better-auth": "^1.4.8",
+    "clsx": "^2.1.1",
+    "file-saver": "^2.0.5",
+    "html-to-docx": "^1.8.0",
+    "html2canvas": "^1.4.1",
+    "immer": "^11.1.0",
+    "jspdf": "^3.0.4",
+    "lucide-react": "^0.562.0",
+    "next": "16.1.1",
+    "next-intl": "^4.6.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^16.1.0",
+    "remark-gfm": "^4.0.1",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.2.1",
+    "zustand": "^5.0.9"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.0",
+    "@netlify/plugin-nextjs": "^5.15.3",
+    "@tailwindcss/postcss": "^4",
+    "@types/file-saver": "^2.0.7",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "rimraf": "^6.1.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

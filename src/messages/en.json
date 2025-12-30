@@ -1,0 +1,830 @@
+{
+  "title": "Jobs AI - Smart Job Assistant",
+  "loading": "Loading...",
+  "nav": {
+    "home": "Home",
+    "docs": "Docs",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Login",
+    "signup": "Free Trial",
+    "getStart": "Get Start",
+    "switchLang": "Switch Language",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "logout": "Logout",
+    "user": "User"
+  },
+  "hero": {
+    "title1": "AI-Powered Job Assistant",
+    "title2": "Land Your Dream Offer",
+    "subtitle": "Ace your interviews with AI mock interviews and smart resume optimization",
+    "inputPlaceholder": "Enter the position you want to interview for, e.g., Frontend Engineer...",
+    "startBtn": "START INTERVIEW",
+    "popularTags": "Popular Positions:",
+    "tags": "Frontend Engineer, Backend Developer, Product Manager",
+    "loginPrompt": {
+      "title": "Login Required",
+      "message": "Please login to use the mock interview feature",
+      "loginButton": "Login",
+      "cancelButton": "Cancel"
+    }
+  },
+  "features": {
+    "card1": {
+      "title": "AI Mock Interview",
+      "description": "Smart AI interviewer simulates real interview scenarios with professional feedback and improvement suggestions."
+    },
+    "card2": {
+      "title": "Smart Resume Optimization",
+      "description": "AI analyzes resume strengths and weaknesses, providing targeted optimization suggestions to improve pass rates."
+    },
+    "card3": {
+      "title": "Technical Question Practice",
+      "description": "Massive real question bank covering major company test types to help you pass written tests easily."
+    }
+  },
+  "tools": {
+    "title": "Our AI Tool Suite",
+    "subtitle": "Comprehensive support for your job search journey",
+    "tool1": {
+      "number": "01",
+      "title": "Mock Interview",
+      "description": "AI interviewer asks questions based on position requirements, evaluates your answers in real-time, and provides professional suggestions."
+    },
+    "tool2": {
+      "number": "02",
+      "title": "Resume Generation",
+      "description": "Automatically generates professional resumes based on your experience, supporting multiple templates and format exports."
+    },
+    "tool3": {
+      "number": "03",
+      "title": "Resume Evaluation",
+      "description": "AI deeply analyzes resume content, providing scores and improvement suggestions from multiple dimensions."
+    }
+  },
+  "stats": {
+    "users": "100K+",
+    "usersLabel": "Active Users",
+    "interviews": "500K+",
+    "interviewsLabel": "Mock Interviews",
+    "offers": "98%",
+    "offersLabel": "Satisfaction Rate"
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subtitle": "Flexible pricing to meet different needs",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "/month",
+      "features": ["10 AI mock interviews per day", "20 technical questions per day", "20 AI resume generations per day", "20 AI resume analyses per day", "Community support"]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$29",
+      "period": "/month",
+      "popular": "Most Popular",
+      "features": ["50 AI mock interviews per day", "100 technical questions per day", "100 AI resume generations per day", "100 AI resume analyses per day", "Detailed interview feedback reports", "Deep resume optimization suggestions", "Priority customer support", "Ad-free experience"]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$99",
+      "period": "/month",
+      "features": ["All Pro features", "Team member management", "Custom interview question bank", "Batch resume analysis", "Data analytics dashboard", "API access", "Dedicated account manager", "Customized services"]
+    },
+    "cta": "Get Started"
+  },
+  "showcase": {
+    "badge": "Core Features",
+    "title": "AI-Powered Job Search Tools",
+    "subtitle": "Three core features to help you stand out in your job search",
+    "interview": {
+      "title": "AI Mock Interview",
+      "desc": "Real conversation practice with intelligent AI interviewers",
+      "feature1": "Customized interview questions for target positions",
+      "feature2": "Real-time voice/text conversation simulating real scenarios",
+      "feature3": "Instant professional feedback for each answer",
+      "feature4": "Detailed analysis report after interview completion",
+      "btn": "Try for Free"
+    },
+    "resume": {
+      "title": "Smart Resume Service",
+      "desc": "AI analysis and optimization for high pass-rate resumes",
+      "feature1": "Multi-dimensional resume scoring and diagnosis",
+      "feature2": "Intelligent content optimization for target positions",
+      "feature3": "One-click application of professional templates",
+      "feature4": "Support for PDF/Word format export",
+      "btn": "Start Now"
+    },
+    "technical": {
+      "title": "Technical Question Practice",
+      "desc": "Massive real questions to master technical interview skills",
+      "feature1": "1000+ selected programming questions",
+      "feature2": "Real-time code execution and testing",
+      "feature3": "AI intelligent hints and detailed explanations",
+      "feature4": "Coverage of major company interview question types",
+      "btn": "Start Practice"
+    },
+    "demo": {
+      "title": "Real AI Interview Experience",
+      "desc": "Our AI interviewer is based on large language models, capable of understanding context, asking follow-up questions, and providing the most realistic interview practice experience",
+      "feature1": "Real-time voice conversation with AI interviewers",
+      "feature2": "Personalized communication style feedback",
+      "feature3": "Industry-specific interview question banks",
+      "feature4": "Progress tracking and skill improvement metrics",
+      "chat": {
+        "aiName": "AI Interviewer",
+        "role": "Frontend Engineer Interview",
+        "msg1": "Can you describe how you optimized page performance in your last project?",
+        "msg2": "I focused on three areas: code splitting, lazy loading images, and caching strategies...",
+        "msg3": "Great! Can you elaborate on how you implemented code splitting?"
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Check out our pricing plans and choose the one that fits you best",
+      "btn": "View Pricing"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Can't find the answer? We can help",
+    "contact": "Contact Us",
+    "q1": {
+      "question": "What's included in the free trial?",
+      "answer": "Free plan includes 3 mock interviews per day, basic resume templates, and basic question practice to fully experience our services."
+    },
+    "q2": {
+      "question": "How does the AI interviewer work?",
+      "answer": "Our AI interviewer is based on large language models, capable of generating professional questions based on position requirements and analyzing your answers in real-time."
+    },
+    "q3": {
+      "question": "What resume formats are supported?",
+      "answer": "We support PDF, Word, online preview and other formats. Pro users can access more advanced templates."
+    },
+    "q4": {
+      "question": "How do I cancel my subscription?",
+      "answer": "You can cancel anytime in account settings. You'll retain access until the end of your billing period."
+    }
+  },
+  "docs": {
+    "badge": "Documentation",
+    "title": "Quick Start Guide",
+    "subtitle": "Learn how to make the most of Jobs AI features to boost your job search efficiency",
+    "search": "Search docs...",
+    "categories": {
+      "getting-started": "Getting Started",
+      "interview": "Mock Interview",
+      "resume": "Resume Service",
+      "questions": "Question Practice",
+      "account": "Account Management",
+      "api": "API Documentation"
+    },
+    "sidebar": {
+      "title": "Documentation",
+      "introduction": "Introduction",
+      "quickStart": "Quick Start",
+      "features": "Features",
+      "faq": "FAQ"
+    },
+    "articles": {
+      "intro": {
+        "title": "Welcome to Jobs AI",
+        "desc": "Jobs AI is an AI-powered smart job assistant that helps you prepare for interviews, optimize resumes, and practice test questions."
+      },
+      "quickStart": {
+        "title": "5-Minute Quick Start",
+        "desc": "Follow this guide to quickly understand Jobs AI's core features and how to use them."
+      },
+      "interview": {
+        "title": "AI Mock Interview Guide",
+        "desc": "Learn how to use the AI interviewer for mock interviews and get professional feedback."
+      },
+      "resume": {
+        "title": "Resume Optimization Tutorial",
+        "desc": "Learn how to use AI to analyze and optimize your resume for better pass rates."
+      }
+    },
+    "content": {
+      "lastUpdated": "Last Updated",
+      "readTime": "Read Time",
+      "minutes": "min",
+      "helpful": "Was this article helpful?",
+      "yes": "Yes",
+      "no": "No",
+      "nextArticle": "Next",
+      "prevArticle": "Previous"
+    },
+    "cta": {
+      "title": "Need Help?",
+      "subtitle": "Contact our support team for assistance",
+      "btn": "Contact Support"
+    }
+  },
+  "interview": {
+    "title": "AI Mock Interview",
+    "subtitle": "Real conversation practice with AI interviewers to improve your interview skills",
+    "create": "Start Interview",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "empty": {
+      "title": "No interview records yet",
+      "description": "Start your first AI mock interview to get professional feedback and improvement suggestions"
+    },
+    "startDialog": {
+      "title": "Start New Interview",
+      "subtitle": "Select a target position to start mock interview",
+      "selectPosition": "Select Target Position",
+      "selectLanguage": "Interview Language",
+      "start": "Start Interview"
+    },
+    "language": {
+      "zh": "Chinese",
+      "en": "English"
+    },
+    "status": {
+      "pending": "Pending",
+      "in_progress": "In Progress",
+      "completed": "Completed"
+    },
+    "card": {
+      "viewResult": "View Result",
+      "continue": "Continue Interview",
+      "start": "Start Interview"
+    },
+    "session": {
+      "title": "AI Interview in Progress",
+      "listening": "Listening...",
+      "thinking": "AI is thinking...",
+      "speak": "Click to start speaking",
+      "end": "End Interview",
+      "next": "Next Question",
+      "difficulty": {
+        "easy": "Easy",
+        "medium": "Medium",
+        "hard": "Hard"
+      }
+    },
+    "result": {
+      "title": "Interview Results",
+      "score": "Total Score",
+      "duration": "Interview Duration",
+      "feedback": "Detailed Feedback",
+      "back": "Back to List",
+      "retry": "Interview Again"
+    }
+  },
+  "guestInterview": {
+    "title": "Guest Mock Interview",
+    "subtitle": "Quick experience of AI mock interview",
+    "roundsRemaining": "Rounds Remaining",
+    "rounds": "{current}/{total} Rounds",
+    "inputPlaceholder": "Type your answer...",
+    "send": "Send",
+    "endInterview": "End Interview",
+    "generating": "AI is thinking...",
+    "evaluating": "Generating evaluation report...",
+    "welcome": "Welcome to guest mode! The AI interviewer will ask you 5 questions. Please answer carefully.",
+    "limitReached": "Guest mode limit reached (5 rounds). Interview will end soon...",
+    "endConfirm": {
+      "title": "Confirm End Interview",
+      "message": "Only {count} rounds completed. Are you sure you want to end early?",
+      "cancel": "Continue Interview",
+      "confirm": "Confirm End"
+    },
+    "result": {
+      "title": "Interview Evaluation Report",
+      "score": "Overall Score",
+      "feedback": "Detailed Feedback",
+      "loginPrompt": "Login to save interview records and view more detailed analysis reports",
+      "loginButton": "Login Now",
+      "retryButton": "Try Again"
+    },
+    "errors": {
+      "generateFailed": "Failed to generate question, please retry",
+      "submitFailed": "Failed to submit, please retry",
+      "limitExceeded": "Daily guest interview limit reached. Please try again tomorrow or login"
+    }
+  },
+  "goalPosition": {
+    "title": "Target Companies",
+    "subtitle": "Manage your target companies and prepare for interviews",
+    "empty": "No target companies yet",
+    "emptyDesc": "Create your first target company to start practicing",
+    "create": "Create Company",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "back": "Back",
+    "save": "Save",
+    "cancel": "Cancel",
+    "creating": "Creating...",
+    "saving": "Saving...",
+    "deleteConfirm": "Are you sure you want to delete this company?",
+    "deleteSuccess": "Company deleted successfully",
+    "createSuccess": "Company created successfully",
+    "updateSuccess": "Company updated successfully",
+    "form": {
+      "name": "Company Name",
+      "namePlaceholder": "e.g. ByteDance",
+      "nameRequired": "Please enter company name",
+      "title": "Target Position",
+      "titlePlaceholder": "e.g. Senior Frontend Engineer",
+      "description": "Company Description",
+      "descriptionPlaceholder": "Describe company culture and position requirements...",
+      "descriptionRequired": "Please enter company description",
+      "experienceLevel": "Experience Level",
+      "experienceLevelRequired": "Please select experience level",
+      "isPublic": "Public Company",
+      "isPublicDesc": "Allow other users to view this company"
+    },
+    "experienceLevel": {
+      "junior": "Junior (0-2 years)",
+      "mid-level": "Mid-level (3-5 years)",
+      "senior": "Senior (5+ years)"
+    },
+    "card": {
+      "experience": "Experience Required",
+      "createdAt": "Created At",
+      "public": "Public",
+      "private": "Private",
+      "publicTemplate": "Public Template"
+    },
+    "showPublicTemplates": "Show Public Templates"
+  },
+  "resumeGenerator": {
+    "title": "AI Resume Generator",
+    "subtitle": "Fill in your information and AI will generate a professional resume for you",
+    "history": {
+      "title": "History",
+      "empty": "No resume records yet",
+      "emptyTip": "Click the \"+\" above to create a new resume",
+      "createNew": "Create New Resume",
+      "todayRemaining": "Today remaining:",
+      "toggleSidebar": {
+        "open": "Open sidebar",
+        "close": "Close sidebar"
+      },
+      "timeAgo": {
+        "justNow": "Just now",
+        "minutesAgo": "{{count}} minutes ago",
+        "hoursAgo": "{{count}} hours ago",
+        "daysAgo": "{{count}} days ago"
+      }
+    },
+    "workspace": {
+      "subtitle": "Fill in your information and AI will generate a professional resume for you",
+      "chatting": "Please answer the following questions, and AI will generate a professional resume for you",
+      "generating": "AI is generating your resume...",
+      "completed": "Resume generated successfully!",
+      "tip": "💡 Tip",
+      "tipDescription": "The system will automatically use the personal information you filled in \"Settings\" to generate your resume. Please ensure your personal information is complete.",
+      "generatingBtn": "Generating...",
+      "startGenerate": "Start Generating Resume",
+      "continueGenerate": "Continue Generating",
+      "backToList": "Back to List"
+    },
+    "chat": {
+      "placeholder": "Type your response..."
+    },
+    "config": {
+      "title": "Generation Config",
+      "targetPosition": "Target Position (Optional)",
+      "noPosition": "No Position Specified",
+      "loading": "Loading...",
+      "selectModel": "Select Model",
+      "selectLanguage": "Generation Language"
+    },
+    "upload": {
+      "title": "Upload Resume",
+      "clickToUpload": "Click to upload resume",
+      "supportFormats": "Supports PDF, Word formats. AI will analyze resume content and provide improvement suggestions"
+    },
+    "style": {
+      "title": "Resume Style Settings",
+      "description": "Describe the resume style you want, and AI will generate a resume in that style according to your description. You can modify the default prompt below, or completely customize it.",
+      "placeholder": "Describe the resume style you want...",
+      "tip": "Tip: You can specify format (Markdown), structure, language style, content to highlight, etc."
+    },
+    "detail": {
+      "notFound": "Resume does not exist or has been deleted",
+      "backToList": "Back to List",
+      "back": "Back",
+      "regenerate": "Regenerate",
+      "downloadWord": "Download Word",
+      "delete": "Delete",
+      "styleSettings": "Style Settings",
+      "stylePlaceholder": "Enter resume style requirements...",
+      "cancel": "Cancel",
+      "startGenerate": "Start Generate",
+      "generating": "Generating...",
+      "preview": "Resume Preview",
+      "generatingContent": "Generating...",
+      "noContent": "No resume content yet, please click \"Regenerate\" button to generate resume",
+      "createdAt": "Created at",
+      "styleSet": "Style Set",
+      "deleteConfirm": {
+        "title": "Delete Resume?",
+        "message": "Are you sure you want to permanently delete <span class=\"text-white font-medium\">{name}</span>? This action cannot be undone.",
+        "deleting": "Deleting..."
+      },
+      "export": {
+        "success": "Document exported successfully!",
+        "failed": "Export failed, please try again"
+      }
+    }
+  },
+  "resumeAnalyzer": {
+    "title": "Resume Analyzer",
+    "subtitle": "Upload your resume and AI will provide professional optimization suggestions",
+    "config": {
+      "title": "Analysis Configuration",
+      "targetPosition": "Target Position (Optional)",
+      "noPosition": "No Position Specified",
+      "selectModel": "Select Model",
+      "selectLanguage": "Analysis Language",
+      "loading": "Loading..."
+    },
+    "upload": {
+      "title": "Upload Resume",
+      "description": "Supports PDF, Word formats. AI will analyze resume content and provide improvement suggestions",
+      "clickToUpload": "Click to upload resume"
+    },
+    "jobDescription": {
+      "label": "Job Description (Optional, paste JD)",
+      "placeholder": "Paste the target job's JD, AI will analyze the match between resume and position..."
+    },
+    "actions": {
+      "analyze": "Start Analysis",
+      "analyzing": "Analyzing..."
+    },
+    "validation": {
+      "fileTooLarge": "File size cannot exceed 10MB",
+      "fileSelected": "File selected, click \"Start Analysis\" to analyze"
+    },
+    "history": {
+      "title": "History",
+      "empty": "No analysis records yet",
+      "emptyTip": "Click \"+\" above to start analysis",
+      "todayRemaining": "Today remaining:",
+      "toggleSidebar": {
+        "open": "Open sidebar",
+        "close": "Close sidebar"
+      },
+      "timeAgo": {
+        "justNow": "Just now",
+        "minutesAgo": "{{count}} minutes ago",
+        "hoursAgo": "{{count}} hours ago",
+        "daysAgo": "{{count}} days ago"
+      },
+      "newAnalysis": "New Analysis",
+      "analysisRecord": "Analysis Record",
+      "score": "Score"
+    },
+    "detail": {
+      "notFound": "Analysis record does not exist or has been deleted",
+      "back": "Back",
+      "backToList": "Back to List",
+      "delete": "Delete Record",
+      "deleting": "Deleting...",
+      "deleteConfirm": {
+        "title": "Delete Analysis Record?",
+        "message": "Are you sure you want to permanently delete <span class=\"text-white font-medium\">{name}</span>? This action cannot be undone.",
+        "deleting": "Deleting..."
+      },
+      "aiScore": "AI Score",
+      "basicInfo": "Basic Information",
+      "fileName": "File Name",
+      "analysisTime": "Analysis Time",
+      "detailedReport": "Detailed Analysis Report",
+      "overallRating": "Overall Rating",
+      "noDetailedContent": "No detailed analysis content available",
+      "targetJobDescription": "Target Job Description",
+      "deleteSuccess": "Deleted successfully",
+      "deleteFailed": "Delete failed"
+    }
+  },
+  "questions": {
+    "title": "Question Bank",
+    "subtitle": {
+      "idle": "AI generates targeted technical questions to improve your interview skills",
+      "generating": "AI is generating questions for you...",
+      "answering": "Please read the question carefully and answer",
+      "submitting": "AI is evaluating your answer...",
+      "completed": "Answer completed, view AI feedback"
+    },
+    "history": {
+      "title": "History",
+      "empty": "No practice records yet",
+      "emptyTip": "Click \"Start Practice\" on the left to generate questions",
+      "todayRemaining": "Today remaining:",
+      "newQuestion": "New Question",
+      "score": "Score",
+      "timeAgo": {
+        "justNow": "Just now",
+        "minutesAgo": "{{count}} minutes ago",
+        "hoursAgo": "{{count}} hours ago",
+        "daysAgo": "{{count}} days ago"
+      },
+      "toggleSidebar": {
+        "open": "Open sidebar",
+        "close": "Close sidebar"
+      }
+    },
+    "config": {
+      "title": "Start New Practice",
+      "selectPosition": "Select Position",
+      "selectDifficulty": "Select Difficulty",
+      "selectLanguage": "Select Language",
+      "loading": "Loading...",
+      "noPosition": "Please select position",
+      "startPractice": "Start Practice"
+    },
+    "answerInput": {
+      "label": "Your Answer",
+      "placeholder": "Type your answer here...",
+      "submit": "Submit Answer",
+      "error": "Please enter your answer",
+      "submitting": "AI evaluating..."
+    },
+    "feedback": {
+      "title": "AI Feedback"
+    },
+    "detail": {
+      "title": "Question Details",
+      "question": "Question",
+      "yourAnswer": "Your Answer",
+      "delete": "Delete Question",
+      "deleteConfirm": {
+        "title": "Delete Question?",
+        "message": "Are you sure you want to permanently delete the practice record for {name}? This action cannot be undone.",
+        "cancel": "Cancel",
+        "confirm": "Delete",
+        "deleting": "Deleting..."
+      },
+      "notFound": "Question not found",
+      "submitFailed": "Submit failed"
+    },
+    "actions": {
+      "continue": "Continue Practice"
+    }
+  },
+  "dashboard": {
+    "nav": {
+      "main": "Main",
+      "account": "Account",
+      "overview": "Overview",
+      "interview": "AI Interview",
+      "resumeGenerator": "Resume Generator",
+      "resumeAnalyzer": "Resume Analyzer",
+      "questions": "Questions",
+      "goalPosition": "Target Companies",
+      "settings": "Settings",
+      "billing": "Billing"
+    },
+    "welcome": {
+      "title": "Welcome Back!",
+      "subtitle": "Ready to boost your job search competitiveness? Start your AI job search journey"
+    },
+    "stats": {
+      "interview": "AI Interviews",
+      "resume": "Resume Generated",
+      "analysis": "Resume Analysis",
+      "questions": "Practice Questions"
+    },
+    "actions": {
+      "title": "Quick Start",
+      "startNow": "Start Now",
+      "interview": {
+        "title": "AI Mock Interview",
+        "desc": "Smart interviewer, real practice"
+      },
+      "resume": {
+        "title": "Resume Generation",
+        "desc": "AI generates professional resumes in one click"
+      },
+      "analysis": {
+        "title": "Resume Analysis",
+        "desc": "Deep analysis, optimization suggestions"
+      },
+      "questions": {
+        "title": "Question Practice",
+        "desc": "Boost your job search competitiveness"
+      }
+    },
+    "usage": {
+      "title": "Today's Usage",
+      "interview": "AI Interviews",
+      "resume": "Resume Generation",
+      "analysis": "Resume Analysis",
+      "questions": "Practice Questions",
+      "upgrade": "Upgrade for more usage →"
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "empty": "No activity records yet, go experience our features!",
+      "score": "points",
+      "types": {
+        "interview": "AI Interview",
+        "resume": "Resume Generation",
+        "analysis": "Resume Analysis",
+        "question": "Practice Questions"
+      }
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "tabs": {
+      "personal": "Personal Info",
+      "security": "Security Settings"
+    },
+    "security": {
+      "title": "Security Settings",
+      "changePassword": "Change Password",
+      "steps": {
+        "email": "Verify Email",
+        "emailDesc": "We will send a verification code to your email to confirm your identity",
+        "otp": "Enter Verification Code",
+        "otpDesc": "Verification code has been sent to {email}",
+        "reset": "Set New Password",
+        "resetDesc": "Please enter your new password",
+        "success": "Password Changed Successfully",
+        "successDesc": "Your password has been successfully updated"
+      },
+      "fields": {
+        "email": "Email Address",
+        "newPassword": "New Password",
+        "newPasswordPlaceholder": "Enter new password (at least 6 characters)",
+        "confirmPassword": "Confirm New Password",
+        "confirmPasswordPlaceholder": "Confirm new password again"
+      },
+      "actions": {
+        "sendCode": "Send Verification Code",
+        "next": "Next",
+        "back": "Back",
+        "resend": "Resend",
+        "resendCountdown": "Resend in {countdown}s",
+        "confirm": "Confirm Change",
+        "return": "Return"
+      },
+      "validation": {
+        "passwordMinLength": "New password must be at least 6 characters",
+        "passwordMismatch": "Passwords do not match"
+      },
+      "updating": "Updating..."
+    },
+    "personal": {
+      "title": "Personal Information",
+      "subtitle": "Complete your personal information for more accurate job recommendations and resume generation",
+      "editMode": "Edit Mode",
+      "sections": {
+        "basic": "Basic Information",
+        "job": "Job Preferences",
+        "experience": "Work & Project Experience",
+        "skills": "Skills & Certificates",
+        "social": "Social Links (Optional)"
+      },
+      "fields": {
+        "realName": "Name",
+        "realNamePlaceholder": "Enter your real name",
+        "phone": "Phone",
+        "phonePlaceholder": "Enter your phone number",
+        "location": "Location",
+        "locationPlaceholder": "e.g. Beijing, Shanghai",
+        "education": "Education",
+        "educationPlaceholder": "e.g. Bachelor, Master",
+        "summary": "Personal Summary",
+        "summaryPlaceholder": "Briefly introduce your background and characteristics",
+        "jobTarget": "Target Position",
+        "jobTargetPlaceholder": "e.g. Frontend Developer",
+        "expectedSalary": "Expected Salary",
+        "expectedSalaryPlaceholder": "e.g. 15-20K",
+        "workYears": "Work Experience (Years)",
+        "workYearsPlaceholder": "Years of work experience",
+        "workExperience": "Work Experience",
+        "workExperiencePlaceholder": "Describe your work experience, including company, position, duration, responsibilities...",
+        "projects": "Project Experience",
+        "projectsPlaceholder": "Describe projects you've participated in, including project name, tech stack, your role and contributions...",
+        "skills": "Skills",
+        "skillsPlaceholder": "e.g. React, TypeScript, Node.js (separated by commas)",
+        "certificates": "Certificates",
+        "certificatesPlaceholder": "e.g. PMP, AWS Certification",
+        "languages": "Languages",
+        "languagesPlaceholder": "e.g. English CET-6, Japanese N2",
+        "selfEvaluation": "Self Evaluation",
+        "selfEvaluationPlaceholder": "Describe your strengths and characteristics",
+        "github": "GitHub",
+        "githubPlaceholder": "https://github.com/username",
+        "linkedin": "LinkedIn",
+        "linkedinPlaceholder": "https://linkedin.com/in/username",
+        "portfolio": "Portfolio",
+        "portfolioPlaceholder": "https://yourwebsite.com"
+      },
+      "save": "Save Information",
+      "saving": "Saving..."
+    }
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "Questions? Get in Touch",
+    "subtitle": "Our team will respond within 24 hours",
+    "form": {
+      "title": "Send Message",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "subject": "Subject",
+      "subjectPlaceholder": "Enter message subject",
+      "message": "Message",
+      "messagePlaceholder": "Enter your message...",
+      "submit": "Send Message"
+    },
+    "info": {
+      "address": { "title": "Address", "text": "Xinjian District, Nanchang, Jiangxi Province" },
+      "email": { "title": "Email", "text": "1195832840@qq.com" },
+      "phone": { "title": "Phone", "text": "13870699954" },
+      "hours": { "title": "Hours", "text": "Mon-Fri 9:00 AM - 6:00 PM" }
+    },
+    "social": "Follow Us"
+  },
+  "authLayout": {
+    "tagline": "AI-Powered Job Assistant",
+    "taglineDesc": "Ace your interviews and optimize your resume with AI-powered tools",
+    "feature1": "AI Mock Interview with Real-time Feedback",
+    "feature2": "Smart Resume Optimization",
+    "feature3": "Massive Question Bank for Written Tests"
+  },
+  "auth": {
+    "loginTitle": "Welcome Back",
+    "loginSubtitle": "Sign in to your account to continue",
+    "registerTitle": "Create Account",
+    "registerSubtitle": "Start your job search journey",
+    "forgotTitle": "Forgot Password",
+    "forgotSubtitle": "We'll send a reset link to your email",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Enter your password again",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "loginBtn": "Sign In",
+    "registerBtn": "Sign Up",
+    "sendResetLink": "Send Reset Link",
+    "orContinueWith": "or continue with",
+    "noAccount": "Don't have an account?",
+    "registerNow": "Sign up now",
+    "hasAccount": "Already have an account?",
+    "loginNow": "Sign in now",
+    "backToLogin": "Back to login",
+    "backToHome": "Back to home",
+    "forgotDesc": "Enter your registered email and we'll send you a password reset link.",
+    "githubLogin": "Continue with GitHub",
+    "invalidEmail": "Please enter a valid email address",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "passwordMismatch": "Passwords do not match",
+    "resetEmailSent": "Reset Email Sent",
+    "resetEmailSentDesc": "Check your inbox and click the link to reset your password",
+    "nameRequired": "Please enter your name",
+    "sendOTP": "Send Verification Code",
+    "otpSentTo": "Verification code sent to",
+    "resendOTP": "Resend Code",
+    "resendIn": "Resend in",
+    "back": "Back",
+    "next": "Next",
+    "newPassword": "New Password",
+    "newPasswordPlaceholder": "Enter your new password",
+    "resetPassword": "Reset Password",
+    "passwordResetSuccess": "Password Reset Successfully",
+    "passwordResetSuccessDesc": "Your password has been reset. You can now login with your new password."
+  },
+  "footer": {
+    "subscribeTitle": "Get Job Search Tips",
+    "emailPlaceholder": "Enter your email",
+    "about": "About",
+    "aboutUs": "About Us",
+    "features": "Features",
+    "news": "News",
+    "menu": "Product",
+    "interview": "Mock Interview",
+    "resume": "Resume Service",
+    "questions": "Question Bank",
+    "support": "Support",
+    "account": "Account",
+    "supportCenter": "Help Center",
+    "feedback": "Feedback",
+    "contactUs": "Contact Us",
+    "getInTouch": "Get in Touch",
+    "address": "Xinjian District, Nanchang, Jiangxi Province",
+    "phone": "13870699954",
+    "email": "1195832840@qq.com",
+    "copyright": "All Rights Reserved"
+  }
+}
