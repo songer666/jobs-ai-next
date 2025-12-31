@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { LogOut, Home, Settings } from "lucide-react";
+import { LogOut, Settings } from "lucide-react";
 import { useCurrentSession, useLogout } from "@/api/auth";
 
 const styles = {
@@ -84,14 +84,6 @@ export default function UserDropdown() {
             <p className={styles.dropdown.email}>{user.email}</p>
           </div>
           <div className={styles.dropdown.menu}>
-            <Link
-              href="/"
-              className={styles.dropdown.item}
-              onClick={() => setIsOpen(false)}
-            >
-              <Home className="w-4 h-4" />
-              <span>{t("home")}</span>
-            </Link>
             <Link
               href="/dashboard/settings"
               className={styles.dropdown.item}

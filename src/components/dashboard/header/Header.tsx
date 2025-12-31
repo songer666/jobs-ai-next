@@ -27,6 +27,9 @@ export default function Header() {
   const toggleLocale = () => {
     const newLocale = locale === "zh-CN" ? "en" : "zh-CN";
     router.replace(pathname, { locale: newLocale });
+    setTimeout(() => {
+      router.refresh();
+    }, 200);
   };
 
   return (

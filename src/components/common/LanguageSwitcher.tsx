@@ -19,6 +19,9 @@ export default function LanguageSwitcher() {
   const switchLocale = (locale: string) => {
     const newPath = pathname.replace(`/${currentLocale}`, `/${locale}`);
     router.push(newPath);
+    setTimeout(() => {
+      router.refresh();
+    }, 200);
   };
 
   return (
