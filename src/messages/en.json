@@ -3,73 +3,14 @@
   "loading": "Loading...",
   "nav": {
     "home": "Home",
-    "docs": "Docs",
-    "pricing": "Pricing",
-    "contact": "Contact",
     "login": "Login",
     "signup": "Free Trial",
-    "getStart": "Get Start",
+    "getStart": "Get Started",
     "switchLang": "Switch Language",
     "dashboard": "Dashboard",
     "settings": "Settings",
     "logout": "Logout",
     "user": "User"
-  },
-  "hero": {
-    "title1": "AI-Powered Job Assistant",
-    "title2": "Land Your Dream Offer",
-    "subtitle": "Ace your interviews with AI mock interviews and smart resume optimization",
-    "inputPlaceholder": "Enter the position you want to interview for, e.g., Frontend Engineer...",
-    "startBtn": "START INTERVIEW",
-    "popularTags": "Popular Positions:",
-    "tags": "Frontend Engineer, Backend Developer, Product Manager",
-    "loginPrompt": {
-      "title": "Login Required",
-      "message": "Please login to use the mock interview feature",
-      "loginButton": "Login",
-      "cancelButton": "Cancel"
-    }
-  },
-  "features": {
-    "card1": {
-      "title": "AI Mock Interview",
-      "description": "Smart AI interviewer simulates real interview scenarios with professional feedback and improvement suggestions."
-    },
-    "card2": {
-      "title": "Smart Resume Optimization",
-      "description": "AI analyzes resume strengths and weaknesses, providing targeted optimization suggestions to improve pass rates."
-    },
-    "card3": {
-      "title": "Technical Question Practice",
-      "description": "Massive real question bank covering major company test types to help you pass written tests easily."
-    }
-  },
-  "tools": {
-    "title": "Our AI Tool Suite",
-    "subtitle": "Comprehensive support for your job search journey",
-    "tool1": {
-      "number": "01",
-      "title": "Mock Interview",
-      "description": "AI interviewer asks questions based on position requirements, evaluates your answers in real-time, and provides professional suggestions."
-    },
-    "tool2": {
-      "number": "02",
-      "title": "Resume Generation",
-      "description": "Automatically generates professional resumes based on your experience, supporting multiple templates and format exports."
-    },
-    "tool3": {
-      "number": "03",
-      "title": "Resume Evaluation",
-      "description": "AI deeply analyzes resume content, providing scores and improvement suggestions from multiple dimensions."
-    }
-  },
-  "stats": {
-    "users": "100K+",
-    "usersLabel": "Active Users",
-    "interviews": "500K+",
-    "interviewsLabel": "Mock Interviews",
-    "offers": "98%",
-    "offersLabel": "Satisfaction Rate"
   },
   "pricing": {
     "title": "Choose Your Plan",
@@ -80,149 +21,46 @@
       "name": "Free",
       "price": "$0",
       "period": "/month",
-      "features": ["10 AI mock interviews per day", "20 technical questions per day", "20 AI resume generations per day", "20 AI resume analyses per day", "Community support"]
+      "features": [
+        "10 AI Mock Interviews/day",
+        "20 Practice Questions/day",
+        "20 AI Resume Generations/day",
+        "20 AI Resume Analyses/day",
+        "Community Support"
+      ]
     },
     "pro": {
-      "name": "Pro",
+      "name": "Professional",
       "price": "$29",
       "period": "/month",
       "popular": "Most Popular",
-      "features": ["50 AI mock interviews per day", "100 technical questions per day", "100 AI resume generations per day", "100 AI resume analyses per day", "Detailed interview feedback reports", "Deep resume optimization suggestions", "Priority customer support", "Ad-free experience"]
+      "features": [
+        "50 AI Mock Interviews/day",
+        "100 Practice Questions/day",
+        "100 AI Resume Generations/day",
+        "100 AI Resume Analyses/day",
+        "Detailed Interview Feedback",
+        "In-depth Resume Optimization",
+        "Priority Support",
+        "Ad-free Experience"
+      ]
     },
     "enterprise": {
       "name": "Enterprise",
       "price": "$99",
       "period": "/month",
-      "features": ["All Pro features", "Team member management", "Custom interview question bank", "Batch resume analysis", "Data analytics dashboard", "API access", "Dedicated account manager", "Customized services"]
+      "features": [
+        "All Pro Features",
+        "Team Member Management",
+        "Custom Interview Question Bank",
+        "Batch Resume Analysis",
+        "Data Analytics Reports",
+        "API Access",
+        "Dedicated Account Manager",
+        "Customized Services"
+      ]
     },
     "cta": "Get Started"
-  },
-  "showcase": {
-    "badge": "Core Features",
-    "title": "AI-Powered Job Search Tools",
-    "subtitle": "Three core features to help you stand out in your job search",
-    "interview": {
-      "title": "AI Mock Interview",
-      "desc": "Real conversation practice with intelligent AI interviewers",
-      "feature1": "Customized interview questions for target positions",
-      "feature2": "Real-time voice/text conversation simulating real scenarios",
-      "feature3": "Instant professional feedback for each answer",
-      "feature4": "Detailed analysis report after interview completion",
-      "btn": "Try for Free"
-    },
-    "resume": {
-      "title": "Smart Resume Service",
-      "desc": "AI analysis and optimization for high pass-rate resumes",
-      "feature1": "Multi-dimensional resume scoring and diagnosis",
-      "feature2": "Intelligent content optimization for target positions",
-      "feature3": "One-click application of professional templates",
-      "feature4": "Support for PDF/Word format export",
-      "btn": "Start Now"
-    },
-    "technical": {
-      "title": "Technical Question Practice",
-      "desc": "Massive real questions to master technical interview skills",
-      "feature1": "1000+ selected programming questions",
-      "feature2": "Real-time code execution and testing",
-      "feature3": "AI intelligent hints and detailed explanations",
-      "feature4": "Coverage of major company interview question types",
-      "btn": "Start Practice"
-    },
-    "demo": {
-      "title": "Real AI Interview Experience",
-      "desc": "Our AI interviewer is based on large language models, capable of understanding context, asking follow-up questions, and providing the most realistic interview practice experience",
-      "feature1": "Real-time voice conversation with AI interviewers",
-      "feature2": "Personalized communication style feedback",
-      "feature3": "Industry-specific interview question banks",
-      "feature4": "Progress tracking and skill improvement metrics",
-      "chat": {
-        "aiName": "AI Interviewer",
-        "role": "Frontend Engineer Interview",
-        "msg1": "Can you describe how you optimized page performance in your last project?",
-        "msg2": "I focused on three areas: code splitting, lazy loading images, and caching strategies...",
-        "msg3": "Great! Can you elaborate on how you implemented code splitting?"
-      }
-    },
-    "cta": {
-      "title": "Ready to Get Started?",
-      "subtitle": "Check out our pricing plans and choose the one that fits you best",
-      "btn": "View Pricing"
-    }
-  },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Can't find the answer? We can help",
-    "contact": "Contact Us",
-    "q1": {
-      "question": "What's included in the free trial?",
-      "answer": "Free plan includes 3 mock interviews per day, basic resume templates, and basic question practice to fully experience our services."
-    },
-    "q2": {
-      "question": "How does the AI interviewer work?",
-      "answer": "Our AI interviewer is based on large language models, capable of generating professional questions based on position requirements and analyzing your answers in real-time."
-    },
-    "q3": {
-      "question": "What resume formats are supported?",
-      "answer": "We support PDF, Word, online preview and other formats. Pro users can access more advanced templates."
-    },
-    "q4": {
-      "question": "How do I cancel my subscription?",
-      "answer": "You can cancel anytime in account settings. You'll retain access until the end of your billing period."
-    }
-  },
-  "docs": {
-    "badge": "Documentation",
-    "title": "Quick Start Guide",
-    "subtitle": "Learn how to make the most of Jobs AI features to boost your job search efficiency",
-    "search": "Search docs...",
-    "categories": {
-      "getting-started": "Getting Started",
-      "interview": "Mock Interview",
-      "resume": "Resume Service",
-      "questions": "Question Practice",
-      "account": "Account Management",
-      "api": "API Documentation"
-    },
-    "sidebar": {
-      "title": "Documentation",
-      "introduction": "Introduction",
-      "quickStart": "Quick Start",
-      "features": "Features",
-      "faq": "FAQ"
-    },
-    "articles": {
-      "intro": {
-        "title": "Welcome to Jobs AI",
-        "desc": "Jobs AI is an AI-powered smart job assistant that helps you prepare for interviews, optimize resumes, and practice test questions."
-      },
-      "quickStart": {
-        "title": "5-Minute Quick Start",
-        "desc": "Follow this guide to quickly understand Jobs AI's core features and how to use them."
-      },
-      "interview": {
-        "title": "AI Mock Interview Guide",
-        "desc": "Learn how to use the AI interviewer for mock interviews and get professional feedback."
-      },
-      "resume": {
-        "title": "Resume Optimization Tutorial",
-        "desc": "Learn how to use AI to analyze and optimize your resume for better pass rates."
-      }
-    },
-    "content": {
-      "lastUpdated": "Last Updated",
-      "readTime": "Read Time",
-      "minutes": "min",
-      "helpful": "Was this article helpful?",
-      "yes": "Yes",
-      "no": "No",
-      "nextArticle": "Next",
-      "prevArticle": "Previous"
-    },
-    "cta": {
-      "title": "Need Help?",
-      "subtitle": "Contact our support team for assistance",
-      "btn": "Contact Support"
-    }
   },
   "interview": {
     "title": "AI Mock Interview",
@@ -739,30 +577,6 @@
       "save": "Save Information",
       "saving": "Saving..."
     }
-  },
-  "contact": {
-    "badge": "Contact Us",
-    "title": "Questions? Get in Touch",
-    "subtitle": "Our team will respond within 24 hours",
-    "form": {
-      "title": "Send Message",
-      "name": "Name",
-      "namePlaceholder": "Enter your name",
-      "email": "Email",
-      "emailPlaceholder": "Enter your email",
-      "subject": "Subject",
-      "subjectPlaceholder": "Enter message subject",
-      "message": "Message",
-      "messagePlaceholder": "Enter your message...",
-      "submit": "Send Message"
-    },
-    "info": {
-      "address": { "title": "Address", "text": "Xinjian District, Nanchang, Jiangxi Province" },
-      "email": { "title": "Email", "text": "1195832840@qq.com" },
-      "phone": { "title": "Phone", "text": "13870699954" },
-      "hours": { "title": "Hours", "text": "Mon-Fri 9:00 AM - 6:00 PM" }
-    },
-    "social": "Follow Us"
   },
   "authLayout": {
     "tagline": "AI-Powered Job Assistant",

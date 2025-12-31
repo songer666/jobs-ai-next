@@ -1,3 +1,3 @@
-export * from './workspace';
-export * from './sidebar';
-export * from './detail';
+export * from "./workspace";
+export * from "./sidebar";
+export * from "./detail";

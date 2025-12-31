@@ -3,9 +3,6 @@
   "loading": "加载中...",
   "nav": {
     "home": "首页",
-    "docs": "文档",
-    "pricing": "定价",
-    "contact": "联系我们",
     "login": "登录",
     "signup": "免费试用",
     "getStart": "开始",
@@ -14,62 +11,6 @@
     "settings": "设置",
     "logout": "退出登录",
     "user": "用户"
-  },
-  "hero": {
-    "title1": "AI 驱动的求职助手",
-    "title2": "助你斩获理想 Offer",
-    "subtitle": "通过 AI 模拟面试、智能简历优化，让你的求职之路更加顺畅",
-    "inputPlaceholder": "输入你想面试的职位，如：前端工程师...",
-    "startBtn": "开始模拟",
-    "popularTags": "热门职位：",
-    "tags": "前端工程师, 后端开发, 产品经理",
-    "loginPrompt": {
-      "title": "需要登录",
-      "message": "请先登录以使用模拟面试功能",
-      "loginButton": "去登录",
-      "cancelButton": "取消"
-    }
-  },
-  "features": {
-    "card1": {
-      "title": "AI 模拟面试",
-      "description": "智能 AI 面试官，模拟真实面试场景，提供专业反馈和改进建议。"
-    },
-    "card2": {
-      "title": "智能简历优化",
-      "description": "AI 分析简历亮点与不足，提供针对性优化建议，提升简历通过率。"
-    },
-    "card3": {
-      "title": "笔试题库练习",
-      "description": "海量真题练习，覆盖各大公司笔试题型，助你轻松通过笔试关。"
-    }
-  },
-  "tools": {
-    "title": "我们的 AI 工具套件",
-    "subtitle": "全方位助力你的求职之旅",
-    "tool1": {
-      "number": "01",
-      "title": "模拟面试",
-      "description": "AI 面试官根据职位要求提问，实时评估你的回答，给出专业建议。"
-    },
-    "tool2": {
-      "number": "02",
-      "title": "简历生成",
-      "description": "根据你的经历自动生成专业简历，支持多种模板和格式导出。"
-    },
-    "tool3": {
-      "number": "03",
-      "title": "简历评估",
-      "description": "AI 深度分析简历内容，从多维度给出评分和改进建议。"
-    }
-  },
-  "stats": {
-    "users": "10万+",
-    "usersLabel": "活跃用户",
-    "interviews": "50万+",
-    "interviewsLabel": "模拟面试",
-    "offers": "98%",
-    "offersLabel": "满意度"
   },
   "pricing": {
     "title": "选择适合你的方案",
@@ -80,149 +21,46 @@
       "name": "免费版",
       "price": "¥0",
       "period": "/月",
-      "features": ["每日 10 次 AI 模拟面试", "每日 20 次笔试题练习", "每日 20 次 AI 简历生成", "每日 20 次 AI 简历分析", "社区支持"]
+      "features": [
+        "每日 10 次 AI 模拟面试",
+        "每日 20 次笔试题练习",
+        "每日 20 次 AI 简历生成",
+        "每日 20 次 AI 简历分析",
+        "社区支持"
+      ]
     },
     "pro": {
       "name": "专业版",
       "price": "¥29",
       "period": "/月",
       "popular": "最受欢迎",
-      "features": ["每日 50 次 AI 模拟面试", "每日 100 次笔试题练习", "每日 100 次 AI 简历生成", "每日 100 次 AI 简历分析", "面试详细反馈报告", "简历深度优化建议", "优先客服支持", "无广告体验"]
+      "features": [
+        "每日 50 次 AI 模拟面试",
+        "每日 100 次笔试题练习",
+        "每日 100 次 AI 简历生成",
+        "每日 100 次 AI 简历分析",
+        "面试详细反馈报告",
+        "简历深度优化建议",
+        "优先客服支持",
+        "无广告体验"
+      ]
     },
     "enterprise": {
       "name": "企业版",
       "price": "¥99",
       "period": "/月",
-      "features": ["所有专业版功能", "团队成员管理", "自定义面试题库", "批量简历分析", "数据统计报表", "API 接口访问", "专属客户经理", "定制化服务"]
+      "features": [
+        "所有专业版功能",
+        "团队成员管理",
+        "自定义面试题库",
+        "批量简历分析",
+        "数据统计报表",
+        "API 接口访问",
+        "专属客户经理",
+        "定制化服务"
+      ]
     },
     "cta": "立即开始"
-  },
-  "showcase": {
-    "badge": "核心功能",
-    "title": "AI 驱动的求职利器",
-    "subtitle": "三大核心功能，助你在求职路上脱颖而出",
-    "interview": {
-      "title": "AI 模拟面试",
-      "desc": "与智能 AI 面试官进行真实对话练习",
-      "feature1": "根据目标岗位定制面试问题",
-      "feature2": "实时语音/文字对话，模拟真实场景",
-      "feature3": "每次回答即时获得专业反馈",
-      "feature4": "面试结束生成详细分析报告",
-      "btn": "免费体验"
-    },
-    "resume": {
-      "title": "智能简历服务",
-      "desc": "AI 分析优化，打造高通过率简历",
-      "feature1": "多维度简历评分与诊断",
-      "feature2": "针对目标岗位智能优化内容",
-      "feature3": "多种专业模板一键套用",
-      "feature4": "支持 PDF/Word 格式导出",
-      "btn": "立即使用"
-    },
-    "technical": {
-      "title": "技术题练习",
-      "desc": "海量真题练习，掌握技术面试技巧",
-      "feature1": "1000+ 精选编程题目",
-      "feature2": "实时代码执行与测试",
-      "feature3": "AI 智能提示与详细解析",
-      "feature4": "各大厂面试题型覆盖",
-      "btn": "开始练习"
-    },
-    "demo": {
-      "title": "真实的 AI 面试体验",
-      "desc": "我们的 AI 面试官基于大语言模型，能够理解上下文、追问细节，给你最接近真实面试的练习体验",
-      "feature1": "实时语音与 AI 面试官对话",
-      "feature2": "个性化沟通风格反馈",
-      "feature3": "行业专属面试题库",
-      "feature4": "进度跟踪与能力提升指标",
-      "chat": {
-        "aiName": "AI 面试官",
-        "role": "前端工程师面试",
-        "msg1": "请介绍一下你在上一个项目中是如何优化页面性能的？",
-        "msg2": "我主要从三个方面入手：代码分割、图片懒加载和缓存策略...",
-        "msg3": "很好！能具体说说你是如何实现代码分割的吗？"
-      }
-    },
-    "cta": {
-      "title": "准备好开始了吗？",
-      "subtitle": "查看我们的定价方案，选择最适合你的计划",
-      "btn": "查看定价"
-    }
-  },
-  "faq": {
-    "title": "常见问题",
-    "subtitle": "找不到答案？我们可以帮助你",
-    "contact": "联系我们",
-    "q1": {
-      "question": "免费试用包含哪些功能？",
-      "answer": "免费版包含每日3次模拟面试、基础简历模板和题库基础练习，让你充分体验我们的服务。"
-    },
-    "q2": {
-      "question": "AI 面试官是如何工作的？",
-      "answer": "我们的 AI 面试官基于大语言模型，能够根据职位要求生成专业问题，并实时分析你的回答给出反馈。"
-    },
-    "q3": {
-      "question": "简历模板支持哪些格式？",
-      "answer": "支持 PDF、Word、在线预览等多种格式，专业版用户还可以使用更多高级模板。"
-    },
-    "q4": {
-      "question": "如何取消订阅？",
-      "answer": "你可以随时在账户设置中取消订阅，取消后当前周期内仍可使用所有功能。"
-    }
-  },
-  "docs": {
-    "badge": "使用文档",
-    "title": "快速上手指南",
-    "subtitle": "了解如何充分利用 Jobs AI 的各项功能，提升你的求职效率",
-    "search": "搜索文档...",
-    "categories": {
-      "getting-started": "快速开始",
-      "interview": "模拟面试",
-      "resume": "简历服务",
-      "questions": "题库练习",
-      "account": "账户管理",
-      "api": "API 文档"
-    },
-    "sidebar": {
-      "title": "文档目录",
-      "introduction": "简介",
-      "quickStart": "快速开始",
-      "features": "功能介绍",
-      "faq": "常见问题"
-    },
-    "articles": {
-      "intro": {
-        "title": "欢迎使用 Jobs AI",
-        "desc": "Jobs AI 是一款 AI 驱动的智能求职助手，帮助你准备面试、优化简历、练习笔试题目。"
-      },
-      "quickStart": {
-        "title": "5 分钟快速上手",
-        "desc": "跟随本指南，快速了解 Jobs AI 的核心功能和使用方法。"
-      },
-      "interview": {
-        "title": "AI 模拟面试指南",
-        "desc": "学习如何使用 AI 面试官进行模拟面试，获取专业反馈。"
-      },
-      "resume": {
-        "title": "简历优化教程",
-        "desc": "了解如何使用 AI 分析和优化你的简历，提升通过率。"
-      }
-    },
-    "content": {
-      "lastUpdated": "最后更新",
-      "readTime": "阅读时间",
-      "minutes": "分钟",
-      "helpful": "这篇文章有帮助吗？",
-      "yes": "有帮助",
-      "no": "没帮助",
-      "nextArticle": "下一篇",
-      "prevArticle": "上一篇"
-    },
-    "cta": {
-      "title": "还有疑问？",
-      "subtitle": "联系我们的支持团队，获取更多帮助",
-      "btn": "联系支持"
-    }
   },
   "interview": {
     "title": "AI 模拟面试",
@@ -739,30 +577,6 @@
       "save": "保存信息",
       "saving": "保存中..."
     }
-  },
-  "contact": {
-    "badge": "联系我们",
-    "title": "有问题？随时联系",
-    "subtitle": "我们的团队会在 24 小时内回复您",
-    "form": {
-      "title": "发送消息",
-      "name": "姓名",
-      "namePlaceholder": "请输入您的姓名",
-      "email": "邮箱",
-      "emailPlaceholder": "请输入您的邮箱",
-      "subject": "主题",
-      "subjectPlaceholder": "请输入消息主题",
-      "message": "消息内容",
-      "messagePlaceholder": "请输入您想咨询的内容...",
-      "submit": "发送消息"
-    },
-    "info": {
-      "address": { "title": "地址", "text": "江西省南昌市新建区" },
-      "email": { "title": "邮箱", "text": "1195832840@qq.com" },
-      "phone": { "title": "电话", "text": "13870699954" },
-      "hours": { "title": "工作时间", "text": "周一至周五 9:00 - 18:00" }
-    },
-    "social": "关注我们"
   },
   "authLayout": {
     "tagline": "AI 驱动的求职助手",

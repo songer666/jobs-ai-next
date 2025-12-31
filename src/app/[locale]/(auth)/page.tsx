@@ -1,8 +1,8 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
-import { RegisterForm } from "@/components/auth";
+import { LoginForm } from "@/components/auth";
 
-interface RegisterPageProps {
+interface LoginPageProps {
   params: Promise<{ locale: string }>;
 }
 
@@ -18,7 +18,7 @@ const styles = {
   backLink: "text-white/40 text-sm hover:text-white/60 transition-colors",
 };
 
-export default async function RegisterPage({ params }: RegisterPageProps) {
+export default async function LoginPage({ params }: LoginPageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("auth");
@@ -27,11 +27,11 @@ export default async function RegisterPage({ params }: RegisterPageProps) {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <div className={styles.header.wrapper}>
-          <h2 className={styles.header.title}>{t("registerTitle")}</h2>
-          <p className={styles.header.subtitle}>{t("registerSubtitle")}</p>
+          <h2 className={styles.header.title}>{t("loginTitle")}</h2>
+          <p className={styles.header.subtitle}>{t("loginSubtitle")}</p>
         </div>
 
-        <RegisterForm />
+        <LoginForm />
       </div>
 
       <div className={styles.back}>

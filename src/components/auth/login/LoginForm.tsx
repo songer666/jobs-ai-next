@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
-import { useSendLoginOTP, useLoginWithOTP } from '@/api/auth';
-import { GitHubButton, Divider, authStyles } from '../shared';
-import StepIndicator from './StepIndicator';
-import CredentialsStep from './CredentialsStep';
-import OTPStep from './OTPStep';
-import { useOTPStore } from '@/store/otp/store';
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useSendLoginOTP, useLoginWithOTP } from "@/api/auth";
+import { GitHubButton, Divider, authStyles } from "../shared";
+import StepIndicator from "./StepIndicator";
+import CredentialsStep from "./CredentialsStep";
+import OTPStep from "./OTPStep";
+import { useOTPStore } from "@/store/otp/store";
 
 export default function LoginForm() {
-  const t = useTranslations('auth');
+  const t = useTranslations("auth");
   const {
     flowType,
     step,
@@ -51,16 +51,21 @@ export default function LoginForm() {
   // 登录成功后清除状态
   useEffect(() => {
     if (loginMutation.isSuccess) {
-      clearFlow('login');
+      clearFlow("login");
     }
   }, [loginMutation.isSuccess, clearFlow]);
 
   // 当前是否在登录流程的 OTP 步骤
-  const currentStep = flowType === 'login' && step === 'otp' ? 'otp' : 'credentials';
+  const currentStep =
+    flowType === "login" && step === "otp" ? "otp" : "credentials";
 
-  const handleCredentialsSubmit = async (data: { email: string; password: string; rememberMe: boolean }) => {
+  const handleCredentialsSubmit = async (data: {
+    email: string;
+    password: string;
+    rememberMe: boolean;
+  }) => {
     // 保存数据并立即进入 OTP 步骤
-    startFlow('login', data);
+    startFlow("login", data);
     goToOTPStep();
     // 只有在倒计时结束后才重新发送验证码
     if (countdown === 0) {
@@ -88,22 +93,25 @@ export default function LoginForm() {
     goBack();
   };
 
-  const handleStepClick = (targetStep: 'credentials' | 'otp') => {
-    if (targetStep === 'credentials' && step === 'otp') {
+  const handleStepClick = (targetStep: "credentials" | "otp") => {
+    if (targetStep === "credentials" && step === "otp") {
       goBack();
     }
   };
 
   return (
     <div>
-      <StepIndicator 
-        currentStep={step} 
+      <StepIndicator
+        currentStep={step}
         onStepClick={handleStepClick}
         canGoBack={true}
       />
 
-      {step === 'credentials' ? (
-        <CredentialsStep onSubmit={handleCredentialsSubmit} isPending={sendOTPMutation.isPending} />
+      {step === "credentials" ? (
+        <CredentialsStep
+          onSubmit={handleCredentialsSubmit}
+          isPending={sendOTPMutation.isPending}
+        />
       ) : (
         <OTPStep
           email={email}
@@ -117,7 +125,7 @@ export default function LoginForm() {
         />
       )}
 
-      {step === 'credentials' && (
+      {step === "credentials" && (
         <>
           <Divider />
           <GitHubButton />
@@ -126,9 +134,9 @@ export default function LoginForm() {
 
       <div className={authStyles.footer.wrapper}>
         <p className={authStyles.footer.text}>
-          {t('noAccount')}
+          {t("noAccount")}
           <Link href="/register" className={authStyles.footer.link}>
-            {t('registerNow')}
+            {t("registerNow")}
           </Link>
         </p>
       </div>

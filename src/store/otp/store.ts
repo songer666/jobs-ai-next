@@ -1,17 +1,17 @@
-import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
-import { immer } from 'zustand/middleware/immer';
-import type { OTPFlowState, OTPFlowActions, FlowType } from './type';
+import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { immer } from "zustand/middleware/immer";
+import type { OTPFlowState, OTPFlowActions, FlowType } from "./type";
 
 const initialState: OTPFlowState = {
   flowType: null,
-  step: 'credentials',
-  email: '',
-  password: '',
-  name: '',
+  step: "credentials",
+  email: "",
+  password: "",
+  name: "",
   rememberMe: false,
   countdownEndTime: null, // 全局共享的倒计时结束时间
-  otp: '',
+  otp: "",
 };
 
 export const useOTPStore = create<OTPFlowState & OTPFlowActions>()(
@@ -23,22 +23,22 @@ export const useOTPStore = create<OTPFlowState & OTPFlowActions>()(
         set((state) => {
           state.flowType = flowType;
           state.email = data.email;
-          state.password = data.password || '';
-          state.name = data.name || '';
+          state.password = data.password || "";
+          state.name = data.name || "";
           state.rememberMe = data.rememberMe || false;
         });
       },
 
       goToOTPStep: () => {
         set((state) => {
-          state.step = 'otp';
+          state.step = "otp";
         });
       },
 
       goBack: () => {
         set((state) => {
-          state.step = 'credentials';
-          state.otp = '';
+          state.step = "credentials";
+          state.otp = "";
         });
       },
 
@@ -73,7 +73,7 @@ export const useOTPStore = create<OTPFlowState & OTPFlowActions>()(
       },
     })),
     {
-      name: 'otp-flow-storage',
+      name: "otp-flow-storage",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         flowType: state.flowType,
@@ -84,6 +84,6 @@ export const useOTPStore = create<OTPFlowState & OTPFlowActions>()(
         rememberMe: state.rememberMe,
         countdownEndTime: state.countdownEndTime,
       }),
-    }
-  )
+    },
+  ),
 );

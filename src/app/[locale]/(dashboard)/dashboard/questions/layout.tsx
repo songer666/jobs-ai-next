@@ -1,64 +1,71 @@
-'use client';
+"use client";
 
-import { ReactNode, createContext, useContext, useState, useCallback } from 'react';
-import { QuestionHistorySidebar } from '@/components/questions/QuestionHistorySidebar';
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+} from "react";
+import { QuestionHistorySidebar } from "@/components/questions/QuestionHistorySidebar";
 
 interface QuestionsLayoutContextType {
-    sidebarOpen: boolean;
-    toggleSidebar: () => void;
-    addNewQuestion: (id: string) => void;
-    newQuestionId: string | null;
-    clearNewQuestion: () => void;
+  sidebarOpen: boolean;
+  toggleSidebar: () => void;
+  addNewQuestion: (id: string) => void;
+  newQuestionId: string | null;
+  clearNewQuestion: () => void;
 }
 
-const QuestionsLayoutContext = createContext<QuestionsLayoutContextType | null>(null);
+const QuestionsLayoutContext = createContext<QuestionsLayoutContextType | null>(
+  null,
+);
 
 export function useQuestionsLayout() {
-    const context = useContext(QuestionsLayoutContext);
-    if (!context) {
-        throw new Error('useQuestionsLayout must be used within QuestionsLayout');
-    }
-    return context;
+  const context = useContext(QuestionsLayoutContext);
+  if (!context) {
+    throw new Error("useQuestionsLayout must be used within QuestionsLayout");
+  }
+  return context;
 }
 
 interface QuestionsLayoutProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 export default function QuestionsLayout({ children }: QuestionsLayoutProps) {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [newQuestionId, setNewQuestionId] = useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [newQuestionId, setNewQuestionId] = useState<string | null>(null);
 
-    const toggleSidebar = useCallback(() => {
-        setSidebarOpen(prev => !prev);
-    }, []);
+  const toggleSidebar = useCallback(() => {
+    setSidebarOpen((prev) => !prev);
+  }, []);
 
-    const addNewQuestion = useCallback((id: string) => {
-        setNewQuestionId(id);
-    }, []);
+  const addNewQuestion = useCallback((id: string) => {
+    setNewQuestionId(id);
+  }, []);
 
-    const clearNewQuestion = useCallback(() => {
-        setNewQuestionId(null);
-    }, []);
+  const clearNewQuestion = useCallback(() => {
+    setNewQuestionId(null);
+  }, []);
 
-    return (
-        <QuestionsLayoutContext.Provider value={{ 
-            sidebarOpen, 
-            toggleSidebar, 
-            addNewQuestion, 
-            newQuestionId,
-            clearNewQuestion 
-        }}>
-            <div className="relative flex h-full w-full">
-                {/* 主内容区域 */}
-                <main className="flex-1 overflow-auto">
-                    {children}
-                </main>
+  return (
+    <QuestionsLayoutContext.Provider
+      value={{
+        sidebarOpen,
+        toggleSidebar,
+        addNewQuestion,
+        newQuestionId,
+        clearNewQuestion,
+      }}
+    >
+      <div className="relative flex h-full w-full">
+        {/* 主内容区域 */}
+        <main className="flex-1 overflow-auto">{children}</main>
 
-                {/* 右侧历史记录侧边栏 */}
-                <QuestionHistorySidebar />
-
-            </div>
-        </QuestionsLayoutContext.Provider>
-    );
+        {/* 右侧历史记录侧边栏 */}
+        <QuestionHistorySidebar />
+      </div>
+    </QuestionsLayoutContext.Provider>
+  );
 }

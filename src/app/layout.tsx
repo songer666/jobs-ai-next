@@ -16,16 +16,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | JobsAI',
-    default: 'JobsAI - AI-Powered Job Preparation Platform',
+    template: "%s | JobsAI",
+    default: "JobsAI - AI-Powered Job Preparation Platform",
   },
-  description: "Boost your job search with AI technology. AI resume generation, resume analysis, mock interviews, and technical practice.",
-  keywords: "AI resume generator,resume analysis,mock interview,technical practice,job preparation",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+  description:
+    "Boost your job search with AI technology. AI resume generation, resume analysis, mock interviews, and technical practice.",
+  keywords:
+    "AI resume generator,resume analysis,mock interview,technical practice,job preparation",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+  ),
 };
 
 export const viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 1,
 };
@@ -40,9 +44,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryProvider>
-          {children}
-        </QueryProvider>
+        <QueryProvider>{children}</QueryProvider>
         <Toaster richColors position="top-center" />
       </body>
     </html>

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { InputOTP } from '@heroui/react';
+import { InputOTP } from "@heroui/react";
 
 interface OTPInputProps {
   value: string;
@@ -8,7 +8,11 @@ interface OTPInputProps {
   onComplete?: (value: string) => void;
 }
 
-export default function OTPInput({ value, onChange, onComplete }: OTPInputProps) {
+export default function OTPInput({
+  value,
+  onChange,
+  onComplete,
+}: OTPInputProps) {
   return (
     <div className="flex justify-center mb-6">
       <InputOTP

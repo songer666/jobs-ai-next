@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { useForm } from '@tanstack/react-form';
+import { useTranslations } from "next-intl";
+import { useForm } from "@tanstack/react-form";
 import {
   Form,
   TextField,
@@ -9,9 +9,9 @@ import {
   Input,
   FieldError,
   Button,
-} from '@heroui/react';
-import { passwordSchema } from '@/api/auth';
-import { authStyles } from '../shared';
+} from "@heroui/react";
+import { passwordSchema } from "@/api/auth";
+import { authStyles } from "../shared";
 
 interface ResetStepProps {
   onSubmit: (newPassword: string) => Promise<void>;
@@ -19,12 +19,12 @@ interface ResetStepProps {
 }
 
 export default function ResetStep({ onSubmit, isPending }: ResetStepProps) {
-  const t = useTranslations('auth');
+  const t = useTranslations("auth");
 
   const form = useForm({
     defaultValues: {
-      newPassword: '',
-      confirmPassword: '',
+      newPassword: "",
+      confirmPassword: "",
     },
     onSubmit: async ({ value }) => {
       await onSubmit(value.newPassword);
@@ -46,7 +46,7 @@ export default function ResetStep({ onSubmit, isPending }: ResetStepProps) {
           onChange: ({ value }) => {
             const result = passwordSchema.safeParse(value);
             if (!result.success) {
-              return t('passwordTooShort');
+              return t("passwordTooShort");
             }
             return undefined;
           },
@@ -62,8 +62,8 @@ export default function ResetStep({ onSubmit, isPending }: ResetStepProps) {
             onBlur={field.handleBlur}
             isInvalid={field.state.meta.errors.length > 0}
           >
-            <Label>{t('newPassword')}</Label>
-            <Input placeholder={t('newPasswordPlaceholder')} />
+            <Label>{t("newPassword")}</Label>
+            <Input placeholder={t("newPasswordPlaceholder")} />
             {field.state.meta.errors.length > 0 && (
               <FieldError>{field.state.meta.errors[0]}</FieldError>
             )}
@@ -74,11 +74,11 @@ export default function ResetStep({ onSubmit, isPending }: ResetStepProps) {
       <form.Field
         name="confirmPassword"
         validators={{
-          onChangeListenTo: ['newPassword'],
+          onChangeListenTo: ["newPassword"],
           onChange: ({ value, fieldApi }) => {
-            const newPassword = fieldApi.form.getFieldValue('newPassword');
+            const newPassword = fieldApi.form.getFieldValue("newPassword");
             if (value !== newPassword) {
-              return t('passwordMismatch');
+              return t("passwordMismatch");
             }
             return undefined;
           },
@@ -94,8 +94,8 @@ export default function ResetStep({ onSubmit, isPending }: ResetStepProps) {
             onBlur={field.handleBlur}
             isInvalid={field.state.meta.errors.length > 0}
           >
-            <Label>{t('confirmPassword')}</Label>
-            <Input placeholder={t('confirmPasswordPlaceholder')} />
+            <Label>{t("confirmPassword")}</Label>
+            <Input placeholder={t("confirmPasswordPlaceholder")} />
             {field.state.meta.errors.length > 0 && (
               <FieldError>{field.state.meta.errors[0]}</FieldError>
             )}
@@ -109,7 +109,7 @@ export default function ResetStep({ onSubmit, isPending }: ResetStepProps) {
         isPending={isPending}
         className="gradient-btn text-white font-semibold rounded-xl h-12"
       >
-        {t('resetPassword')}
+        {t("resetPassword")}
       </Button>
     </Form>
   );

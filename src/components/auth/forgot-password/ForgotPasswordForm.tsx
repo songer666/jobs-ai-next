@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
-import { useSendOTP, useResetPassword } from '@/api/auth';
-import { authStyles } from '../shared';
-import StepIndicator from './StepIndicator';
-import EmailStep from './EmailStep';
-import OTPStep from './OTPStep';
-import ResetStep from './ResetStep';
-import SuccessStep from './SuccessStep';
-import { useOTPStore } from '@/store/otp/store';
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useSendOTP, useResetPassword } from "@/api/auth";
+import { authStyles } from "../shared";
+import StepIndicator from "./StepIndicator";
+import EmailStep from "./EmailStep";
+import OTPStep from "./OTPStep";
+import ResetStep from "./ResetStep";
+import SuccessStep from "./SuccessStep";
+import { useOTPStore } from "@/store/otp/store";
 
-type LocalStep = 'email' | 'otp' | 'reset' | 'success';
+type LocalStep = "email" | "otp" | "reset" | "success";
 
 export default function ForgotPasswordForm() {
-  const t = useTranslations('auth');
+  const t = useTranslations("auth");
   const {
     flowType,
     step: storeStep,
@@ -30,7 +30,7 @@ export default function ForgotPasswordForm() {
     clearFlow,
   } = useOTPStore();
 
-  const [localStep, setLocalStep] = useState<LocalStep>('email');
+  const [localStep, setLocalStep] = useState<LocalStep>("email");
   const [countdown, setCountdown] = useState(0);
 
   const sendOTPMutation = useSendOTP();
@@ -53,15 +53,15 @@ export default function ForgotPasswordForm() {
 
   // 同步 store 步骤到本地步骤
   useEffect(() => {
-    if (flowType === 'forgot-password' && storeStep === 'otp') {
-      setLocalStep('otp');
+    if (flowType === "forgot-password" && storeStep === "otp") {
+      setLocalStep("otp");
     }
   }, [flowType, storeStep]);
 
   const handleEmailSubmit = async (emailValue: string) => {
-    startFlow('forgot-password', { email: emailValue });
+    startFlow("forgot-password", { email: emailValue });
     goToOTPStep();
-    setLocalStep('otp');
+    setLocalStep("otp");
     // 只有在倒计时结束后才重新发送验证码
     if (countdown === 0) {
       startCountdown(60);
@@ -78,51 +78,63 @@ export default function ForgotPasswordForm() {
   const handleOTPComplete = (value: string) => {
     setOTP(value);
     if (value.length === 6) {
-      setLocalStep('reset');
+      setLocalStep("reset");
     }
   };
 
   const handleResetPassword = async (newPassword: string) => {
-    await resetPasswordMutation.mutateAsync({ email: storeEmail, otp: storeOtp, newPassword });
-    clearFlow('forgot-password');
-    setLocalStep('success');
+    await resetPasswordMutation.mutateAsync({
+      email: storeEmail,
+      otp: storeOtp,
+      newPassword,
+    });
+    clearFlow("forgot-password");
+    setLocalStep("success");
   };
 
   const handleBack = () => {
-    if (localStep === 'otp') {
+    if (localStep === "otp") {
       goBack();
-      setLocalStep('email');
-    } else if (localStep === 'reset') {
-      setLocalStep('otp');
+      setLocalStep("email");
+    } else if (localStep === "reset") {
+      setLocalStep("otp");
     }
   };
 
-  const handleStepClick = (targetStep: 'email' | 'otp' | 'reset' | 'success') => {
-    if (targetStep === 'email' && (localStep === 'otp' || localStep === 'reset')) {
+  const handleStepClick = (
+    targetStep: "email" | "otp" | "reset" | "success",
+  ) => {
+    if (
+      targetStep === "email" &&
+      (localStep === "otp" || localStep === "reset")
+    ) {
       goBack();
-      setLocalStep('email');
-    } else if (targetStep === 'otp' && localStep === 'reset') {
-      setLocalStep('otp');
+      setLocalStep("email");
+    } else if (targetStep === "otp" && localStep === "reset") {
+      setLocalStep("otp");
     }
   };
 
-  if (localStep === 'success') {
+  if (localStep === "success") {
     return <SuccessStep />;
   }
 
   return (
     <div>
-      <StepIndicator 
+      <StepIndicator
         currentStep={localStep}
         onStepClick={handleStepClick}
         canGoBack={true}
       />
 
-      {localStep === 'email' && (
-        <EmailStep onSubmit={handleEmailSubmit} isPending={sendOTPMutation.isPending} />
+      {localStep === "email" && (
+        <EmailStep
+          onSubmit={handleEmailSubmit}
+          isPending={sendOTPMutation.isPending}
+        />
       )}
 
-      {localStep === 'otp' && (
+      {localStep === "otp" && (
         <OTPStep
           email={storeEmail}
           otp={storeOtp}
@@ -130,12 +142,12 @@ export default function ForgotPasswordForm() {
           onOtpChange={setOTP}
           onComplete={handleOTPComplete}
           onResend={handleResendOTP}
-          onNext={() => setLocalStep('reset')}
+          onNext={() => setLocalStep("reset")}
           isResending={sendOTPMutation.isPending}
         />
       )}
 
-      {localStep === 'reset' && (
+      {localStep === "reset" && (
         <ResetStep
           onSubmit={handleResetPassword}
           isPending={resetPasswordMutation.isPending}
@@ -144,7 +156,7 @@ export default function ForgotPasswordForm() {
 
       <div className={authStyles.footer.wrapper}>
         <Link href="/login" className={authStyles.footer.link}>
-          ← {t('backToLogin')}
+          ← {t("backToLogin")}
         </Link>
       </div>
     </div>

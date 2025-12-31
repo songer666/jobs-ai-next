@@ -57,7 +57,11 @@ body {
 }
 
 .gradient-btn {
-  background: linear-gradient(74deg, var(--accent-pink) 0%, var(--accent-orange) 96%);
+  background: linear-gradient(
+    74deg,
+    var(--accent-pink) 0%,
+    var(--accent-orange) 96%
+  );
 }
 
 .gradient-border {
@@ -65,7 +69,11 @@ body {
 }
 
 .bg-gradient-radial {
-  background: radial-gradient(ellipse at center, rgba(253, 64, 154, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(253, 64, 154, 0.15) 0%,
+    transparent 70%
+  );
 }
 
 /* 自定义滚动条样式 */

@@ -1,6 +1,6 @@
-export type FlowType = 'login' | 'register' | 'forgot-password';
+export type FlowType = "login" | "register" | "forgot-password";
 
-export type Step = 'credentials' | 'otp';
+export type Step = "credentials" | "otp";
 
 export interface OTPFlowState {
   flowType: FlowType | null;
@@ -14,7 +14,15 @@ export interface OTPFlowState {
 }
 
 export interface OTPFlowActions {
-  startFlow: (flowType: FlowType, data: { email: string; password?: string; name?: string; rememberMe?: boolean }) => void;
+  startFlow: (
+    flowType: FlowType,
+    data: {
+      email: string;
+      password?: string;
+      name?: string;
+      rememberMe?: boolean;
+    },
+  ) => void;
   goToOTPStep: () => void;
   goBack: () => void;
   setOTP: (otp: string) => void;

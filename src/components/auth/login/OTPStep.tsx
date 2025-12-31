@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { Button } from '@heroui/react';
-import { OTPInput, authStyles } from '../shared';
+import { useTranslations } from "next-intl";
+import { Button } from "@heroui/react";
+import { OTPInput, authStyles } from "../shared";
 
 interface OTPStepProps {
   email: string;
@@ -25,13 +25,13 @@ export default function OTPStep({
   isResending,
   isSubmitting,
 }: OTPStepProps) {
-  const t = useTranslations('auth');
+  const t = useTranslations("auth");
 
   return (
     <>
       <div className="text-center mb-6">
         <p className="text-white/60 text-sm">
-          {t('otpSentTo')} <span className="text-white">{email}</span>
+          {t("otpSentTo")} <span className="text-white">{email}</span>
         </p>
       </div>
 
@@ -44,7 +44,7 @@ export default function OTPStep({
           disabled={countdown > 0 || isResending}
           type="button"
         >
-          {countdown > 0 ? `${t('resendIn')} ${countdown}s` : t('resendOTP')}
+          {countdown > 0 ? `${t("resendIn")} ${countdown}s` : t("resendOTP")}
         </button>
       </div>
 
@@ -55,7 +55,7 @@ export default function OTPStep({
         onPress={onSubmit}
         className="gradient-btn text-white font-semibold rounded-xl h-12 mt-6"
       >
-        {countdown > 0 ? `${t('loginBtn')} (${countdown}s)` : t('loginBtn')}
+        {countdown > 0 ? `${t("loginBtn")} (${countdown}s)` : t("loginBtn")}
       </Button>
     </>
   );

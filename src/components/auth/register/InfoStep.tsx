@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { useForm } from '@tanstack/react-form';
+import { useTranslations } from "next-intl";
+import { useForm } from "@tanstack/react-form";
 import {
   Form,
   TextField,
@@ -9,24 +9,28 @@ import {
   Input,
   FieldError,
   Button,
-} from '@heroui/react';
-import { emailSchema, passwordSchema, nameSchema } from '@/api/auth';
-import { authStyles } from '../shared';
+} from "@heroui/react";
+import { emailSchema, passwordSchema, nameSchema } from "@/api/auth";
+import { authStyles } from "../shared";
 
 interface InfoStepProps {
-  onSubmit: (data: { name: string; email: string; password: string }) => Promise<void>;
+  onSubmit: (data: {
+    name: string;
+    email: string;
+    password: string;
+  }) => Promise<void>;
   isPending: boolean;
 }
 
 export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
-  const t = useTranslations('auth');
+  const t = useTranslations("auth");
 
   const form = useForm({
     defaultValues: {
-      name: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
     },
     onSubmit: async ({ value }) => {
       await onSubmit({
@@ -52,7 +56,7 @@ export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
           onChange: ({ value }) => {
             const result = nameSchema.safeParse(value);
             if (!result.success) {
-              return t('nameRequired');
+              return t("nameRequired");
             }
             return undefined;
           },
@@ -67,8 +71,8 @@ export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
             onBlur={field.handleBlur}
             isInvalid={field.state.meta.errors.length > 0}
           >
-            <Label>{t('name')}</Label>
-            <Input placeholder={t('namePlaceholder')} />
+            <Label>{t("name")}</Label>
+            <Input placeholder={t("namePlaceholder")} />
             {field.state.meta.errors.length > 0 && (
               <FieldError>{field.state.meta.errors[0]}</FieldError>
             )}
@@ -82,7 +86,7 @@ export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
           onChange: ({ value }) => {
             const result = emailSchema.safeParse(value);
             if (!result.success) {
-              return t('invalidEmail');
+              return t("invalidEmail");
             }
             return undefined;
           },
@@ -98,8 +102,8 @@ export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
             onBlur={field.handleBlur}
             isInvalid={field.state.meta.errors.length > 0}
           >
-            <Label>{t('email')}</Label>
-            <Input placeholder={t('emailPlaceholder')} />
+            <Label>{t("email")}</Label>
+            <Input placeholder={t("emailPlaceholder")} />
             {field.state.meta.errors.length > 0 && (
               <FieldError>{field.state.meta.errors[0]}</FieldError>
             )}
@@ -113,7 +117,7 @@ export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
           onChange: ({ value }) => {
             const result = passwordSchema.safeParse(value);
             if (!result.success) {
-              return t('passwordTooShort');
+              return t("passwordTooShort");
             }
             return undefined;
           },
@@ -129,8 +133,8 @@ export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
             onBlur={field.handleBlur}
             isInvalid={field.state.meta.errors.length > 0}
           >
-            <Label>{t('password')}</Label>
-            <Input placeholder={t('passwordPlaceholder')} />
+            <Label>{t("password")}</Label>
+            <Input placeholder={t("passwordPlaceholder")} />
             {field.state.meta.errors.length > 0 && (
               <FieldError>{field.state.meta.errors[0]}</FieldError>
             )}
@@ -141,11 +145,11 @@ export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
       <form.Field
         name="confirmPassword"
         validators={{
-          onChangeListenTo: ['password'],
+          onChangeListenTo: ["password"],
           onChange: ({ value, fieldApi }) => {
-            const password = fieldApi.form.getFieldValue('password');
+            const password = fieldApi.form.getFieldValue("password");
             if (value !== password) {
-              return t('passwordMismatch');
+              return t("passwordMismatch");
             }
             return undefined;
           },
@@ -161,8 +165,8 @@ export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
             onBlur={field.handleBlur}
             isInvalid={field.state.meta.errors.length > 0}
           >
-            <Label>{t('confirmPassword')}</Label>
-            <Input placeholder={t('confirmPasswordPlaceholder')} />
+            <Label>{t("confirmPassword")}</Label>
+            <Input placeholder={t("confirmPasswordPlaceholder")} />
             {field.state.meta.errors.length > 0 && (
               <FieldError>{field.state.meta.errors[0]}</FieldError>
             )}
@@ -176,7 +180,7 @@ export default function InfoStep({ onSubmit, isPending }: InfoStepProps) {
         isPending={isPending}
         className="gradient-btn text-white font-semibold rounded-xl h-12"
       >
-        {t('next')}
+        {t("next")}
       </Button>
     </Form>
   );

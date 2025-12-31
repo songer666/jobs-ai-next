@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { type ReactNode, useEffect } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
-import { Spinner } from '@heroui/react';
+import { type ReactNode, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import { Spinner } from "@heroui/react";
 import { useCurrentSession } from "@/api/auth";
 
 interface AuthGuardProps {
@@ -19,21 +19,23 @@ export const AuthGuard = ({ children, requireAuth = true }: AuthGuardProps) => {
     if (isPending) return;
 
     const isAuthenticated = !!session?.user;
-    const isLoginPage = pathname.includes('/login');
-    const isRegisterPage = pathname.includes('/register');
-    const isForgotPasswordPage = pathname.includes('/forgot-password');
+    const isLoginPage = pathname.includes("/");
+    const isRegisterPage = pathname.includes("/register");
+    const isForgotPasswordPage = pathname.includes("/forgot-password");
     const isAuthPage = isLoginPage || isRegisterPage || isForgotPasswordPage;
 
     if (requireAuth) {
       // 需要鉴权但未登录，跳转到登录页
       if (!isAuthenticated) {
-        const locale = pathname.split('/')[1] || 'en';
-        router.replace(`/${locale}/login?callbackUrl=${encodeURIComponent(pathname)}`);
+        const locale = pathname.split("/")[1] || "en";
+        router.replace(
+          `/${locale}?callbackUrl=${encodeURIComponent(pathname)}`,
+        );
       }
     } else {
       // 不需要鉴权（登录页等），但已登录则跳转到 dashboard
       if (isAuthenticated && isAuthPage) {
-        const locale = pathname.split('/')[1] || 'en';
+        const locale = pathname.split("/")[1] || "en";
         router.replace(`/${locale}/dashboard`);
       }
     }

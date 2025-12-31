@@ -1,1 +1,1 @@
-export * from './useResumeGenerator';
+export * from "./useResumeGenerator";

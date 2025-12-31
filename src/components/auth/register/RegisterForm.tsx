@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
-import { useSendRegisterOTP, useRegisterWithOTP } from '@/api/auth';
-import { GitHubButton, Divider, authStyles } from '../shared';
-import StepIndicator from './StepIndicator';
-import InfoStep from './InfoStep';
-import OTPStep from './OTPStep';
-import { useOTPStore } from '@/store/otp/store';
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useSendRegisterOTP, useRegisterWithOTP } from "@/api/auth";
+import { GitHubButton, Divider, authStyles } from "../shared";
+import StepIndicator from "./StepIndicator";
+import InfoStep from "./InfoStep";
+import OTPStep from "./OTPStep";
+import { useOTPStore } from "@/store/otp/store";
 
 export default function RegisterForm() {
-  const t = useTranslations('auth');
+  const t = useTranslations("auth");
   const {
     flowType,
     step,
@@ -45,21 +45,25 @@ export default function RegisterForm() {
     }, 1000);
 
     return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // 注册成功后清除状态
   useEffect(() => {
     if (registerMutation.isSuccess) {
-      clearFlow('register');
+      clearFlow("register");
     }
   }, [registerMutation.isSuccess, clearFlow]);
 
   // 当前是否在注册流程的 OTP 步骤
-  const currentStep = flowType === 'register' && step === 'otp' ? 'otp' : 'info';
+  const currentStep =
+    flowType === "register" && step === "otp" ? "otp" : "info";
 
-  const handleInfoSubmit = async (data: { name: string; email: string; password: string }) => {
-    startFlow('register', data);
+  const handleInfoSubmit = async (data: {
+    name: string;
+    email: string;
+    password: string;
+  }) => {
+    startFlow("register", data);
     goToOTPStep();
     // 只有在倒计时结束后才重新发送验证码
     if (countdown === 0) {
@@ -79,26 +83,25 @@ export default function RegisterForm() {
     await registerMutation.mutateAsync({ name, email, password, otp });
   };
 
-  const handleBack = () => {
-    goBack();
-  };
-
-  const handleStepClick = (targetStep: 'info' | 'otp') => {
-    if (targetStep === 'info' && currentStep === 'otp') {
+  const handleStepClick = (targetStep: "info" | "otp") => {
+    if (targetStep === "info" && currentStep === "otp") {
       goBack();
     }
   };
 
   return (
     <div>
-      <StepIndicator 
+      <StepIndicator
         currentStep={currentStep}
         onStepClick={handleStepClick}
         canGoBack={true}
       />
 
-      {currentStep === 'info' ? (
-        <InfoStep onSubmit={handleInfoSubmit} isPending={sendOTPMutation.isPending} />
+      {currentStep === "info" ? (
+        <InfoStep
+          onSubmit={handleInfoSubmit}
+          isPending={sendOTPMutation.isPending}
+        />
       ) : (
         <OTPStep
           email={email}
@@ -112,7 +115,7 @@ export default function RegisterForm() {
         />
       )}
 
-      {currentStep === 'info' && (
+      {currentStep === "info" && (
         <>
           <Divider />
           <GitHubButton />
@@ -121,9 +124,9 @@ export default function RegisterForm() {
 
       <div className={authStyles.footer.wrapper}>
         <p className={authStyles.footer.text}>
-          {t('hasAccount')}
-          <Link href="/login" className={authStyles.footer.link}>
-            {t('loginNow')}
+          {t("hasAccount")}
+          <Link href="/" className={authStyles.footer.link}>
+            {t("loginNow")}
           </Link>
         </p>
       </div>

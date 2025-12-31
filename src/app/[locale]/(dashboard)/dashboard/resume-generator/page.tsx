@@ -1,5 +1,5 @@
-import { ResumeGeneratorWorkspace } from '@/components/resume-generator';
+import { ResumeGeneratorWorkspace } from "@/components/resume-generator";
 
 export default function ResumeGeneratorPage() {
-    return <ResumeGeneratorWorkspace />;
+  return <ResumeGeneratorWorkspace />;
 }
